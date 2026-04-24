@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
+  <rect width="1200" height="400" fill="#0F0F0F"/>
+  <rect x="60" y="160" width="20" height="20" fill="#D4882A" rx="3"/>
+  <text x="100" y="180" font-family="system-ui, sans-serif" font-weight="800" font-size="72" fill="#EEEEEE">SkillPulse</text>
+  <text x="100" y="235" font-family="system-ui, sans-serif" font-size="24" fill="#888888">The living registry of AI agent skills, MCPs, and prompts.</text>
+  <text x="100" y="270" font-family="system-ui, sans-serif" font-size="24" fill="#C9A84C">Refreshed every 6h — automatically.</text>
+  <rect x="100" y="310" width="160" height="36" fill="#D4882A" rx="4"/>
+  <text x="118" y="334" font-family="system-ui, sans-serif" font-weight="600" font-size="16" fill="#0F0F0F">View Registry →</text>
+  <text x="1120" y="380" font-family="system-ui, sans-serif" font-weight="800" font-size="18" fill="#D4882A" text-anchor="end">MC. ■</text>
+</svg>

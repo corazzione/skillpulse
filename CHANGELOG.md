@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-04-24
+
+### Added
+- METHODOLOGY.md — full algorithm documentation with code references
+- ARCHITECTURE.md — Mermaid-style data flow diagram and folder structure
+- FAQ.md — common questions answered
+- launch/ — HN post, Reddit posts, Twitter thread, Product Hunt copy, launch checklist
+- .github/assets/ — banner.svg, logo.svg
+- scripts/setup-repo.ts — sets GitHub repo description and topics via API
+- releases/v1.0.0.md — full feature summary
+
+### Changed
+- README polished for public launch with hero section and clear CTAs
+- CHANGELOG.md complete from v0.1.0 to v1.0.0
+
 ## [0.5.0] - 2026-04-24
 
 ### Added

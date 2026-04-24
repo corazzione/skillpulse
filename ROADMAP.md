@@ -6,12 +6,12 @@
 
 | Etapa | Descrição | Status | Commit |
 |-------|-----------|--------|--------|
-| ETAPA 1 | Fundação, arquitetura e esqueleto | Concluído | v0.1.0 |
+| ETAPA 1 | Fundação, arquitetura e esqueleto | ✅ Concluído | v0.1.0 |
 | ETAPA 2 | Ingestores (scrapers) | ✅ Concluído | v0.2.0 |
 | ETAPA 3 | Classificador de IA e scoring | ✅ Concluído | v0.3.0 |
 | ETAPA 4 | Gerador de README e site estático | ✅ Concluído | v0.4.0 |
-| ETAPA 5 | GitHub Actions e bot de issues | Concluído | v0.5.0 |
-| ETAPA 6 | Launch, SEO e distribuição | Pendente | — |
+| ETAPA 5 | GitHub Actions e bot de issues | ✅ Concluído | v0.5.0 |
+| ETAPA 6 | Launch, SEO e distribuição | ✅ Concluído | v1.0.0 |
 
 ## O que foi criado na ETAPA 1
 
@@ -85,32 +85,46 @@
 - `.github/dependabot.yml` — npm + actions weekly updates
 - `digests/.gitkeep` — placeholder para digestos semanais
 
-## Para continuar (ETAPA 6)
+## O que foi criado na ETAPA 6
 
-O próximo agente deve implementar launch, SEO e materiais de distribuição:
+### Documentação
+- `METHODOLOGY.md` — scoring algorithm, classification pipeline, dedup, caching, cost
+- `ARCHITECTURE.md` — data flow diagram, monorepo structure, key design decisions
+- `FAQ.md` — common questions answered (stale lists, accuracy, cost, forking, submissions)
 
-1. Estar na pasta `E:/skillpulse/`
-2. Configurar GitHub Pages no repositório:
-   - Settings → Pages → Source: GitHub Actions
-   - Adicionar secret `ANTHROPIC_API_KEY` em Settings → Secrets
-   - Adicionar variável `ANTHROPIC_MONTHLY_BUDGET_USD` em Settings → Variables (valor: `50`)
-3. SEO e branding assets:
-   - Criar `site/public/og-image.png` (1200x630, MC. dark theme)
-   - Criar `site/public/favicon.ico` e `site/public/favicon.svg`
-   - Verificar og:image, og:title, og:description em todas as páginas
-   - Adicionar `site/public/robots.txt` e `site/public/sitemap.xml` (ou gerar via Astro)
-4. Metodologia e documentação:
-   - Criar `METHODOLOGY.md` explicando o pipeline e fórmula do Pulse Score
-   - Atualizar `CONTRIBUTING.md` com processo de submissão via issues
-   - Criar `.github/ISSUE_TEMPLATE/submit-skill.yml` e `report-stale.yml` se não existirem
-5. Launch materials:
-   - Criar post de launch para Hacker News (Show HN)
-   - Criar post para Reddit r/MachineLearning / r/ClaudeAI
-   - Criar announcement para GitHub Discussions
-6. Monitoramento:
-   - Verificar que `data/health.json` é atualizado após primeiro refresh
-   - Testar bot de issues com issue real de submissão
-   - Confirmar URL final: `https://corazzione.github.io/skillpulse`
+### Branding Assets
+- `.github/assets/banner.svg` — 1200x400 hero banner (MC. dark theme)
+- `.github/assets/logo.svg` — 512x512 square logo with SP monogram
+
+### Launch Materials
+- `launch/HN-post.md` — Show HN submission copy
+- `launch/reddit-posts.md` — Posts for r/ClaudeAI, r/LocalLLaMA, r/programming
+- `launch/twitter-thread.md` — 7-tweet launch thread
+- `launch/producthunt.md` — Product Hunt tagline, description, gallery captions
+- `launch/launch-checklist.md` — T-24h / T-1h / T-0 / T+1h / T+24h / T+7d checklist
+
+### Scripts
+- `scripts/setup-repo.ts` — sets GitHub repo description and topics via Octokit API
+
+### Release
+- `releases/v1.0.0.md` — full feature summary for v1.0.0 public launch
+
+### README
+- Polished for public launch: hero banner, badges, clear CTAs, methodology links
+
+## Post-Launch Ideas
+
+Ideas for future iterations after v1.0.0:
+
+- **More sources** — VS Code Marketplace, Cursor Directory, OpenAI plugin store, Smithery registry
+- **Discord webhook** — post top new entries to a community Discord channel on each refresh
+- **REST API endpoint** — serve `data/snapshots/latest.json` via a simple read API (Cloudflare Workers)
+- **CLI tool** — `npx skillpulse search <query>` to query the registry from the terminal
+- **Email digest** — weekly top-10 digest via Resend or Buttondown
+- **Plausible analytics** — privacy-friendly traffic tracking on the static site
+- **GitHub Discussions** — auto-post weekly digest as a Discussion for community engagement
+- **Contributor leaderboard** — track who submits the most skills via issues
+- **RSS feed** — `data/feed.xml` with new entries for feed readers
 
 ## Stack
 
