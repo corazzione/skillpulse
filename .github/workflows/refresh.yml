@@ -1,0 +1,92 @@
+name: Refresh Data
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  refresh:
+    name: Ingest, Classify, Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run ingestors
+        run: pnpm tsx scripts/run-ingestors.ts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check budget
+        run: pnpm tsx scripts/check-budget.ts
+        env:
+          ANTHROPIC_MONTHLY_BUDGET_USD: ${{ vars.ANTHROPIC_MONTHLY_BUDGET_USD || '50' }}
+
+      - name: Run classifier
+        run: pnpm tsx scripts/run-classifier.ts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Build README and site
+        run: pnpm tsx scripts/build-everything.ts
+
+      - name: Write health file
+        run: pnpm tsx scripts/write-health.ts
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(data): refresh ${{ github.run_id }}'
+          commit_user_name: 'github-actions[bot]'
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
+          file_pattern: 'README.md data/** digests/**'
+
+  deploy:
+    name: Deploy Site
+    needs: refresh
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Build site
+        run: pnpm --filter site build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+      - uses: actions/deploy-pages@v4
+        id: deployment

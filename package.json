@@ -16,7 +16,10 @@
     "build": "pnpm -r build",
     "ingest": "tsx scripts/run-ingestors.ts",
     "classify": "tsx scripts/run-classifier.ts",
-    "build:all": "tsx scripts/build-everything.ts"
+    "build:all": "tsx scripts/build-everything.ts",
+    "check-budget": "tsx scripts/check-budget.ts",
+    "write-health": "tsx scripts/write-health.ts",
+    "digest": "tsx scripts/generate-digest.ts"
   },
   "pnpm": {
     "onlyBuiltDependencies": ["@biomejs/biome", "esbuild"]

@@ -10,7 +10,7 @@
 | ETAPA 2 | Ingestores (scrapers) | ✅ Concluído | v0.2.0 |
 | ETAPA 3 | Classificador de IA e scoring | ✅ Concluído | v0.3.0 |
 | ETAPA 4 | Gerador de README e site estático | ✅ Concluído | v0.4.0 |
-| ETAPA 5 | GitHub Actions e bot de issues | Pendente | — |
+| ETAPA 5 | GitHub Actions e bot de issues | Concluído | v0.5.0 |
 | ETAPA 6 | Launch, SEO e distribuição | Pendente | — |
 
 ## O que foi criado na ETAPA 1
@@ -60,33 +60,57 @@
 - `scripts/build-everything.ts` — gera README + build do site em sequência
 - `pnpm build:all` no root
 
-## Para continuar (ETAPA 5)
+## O que foi criado na ETAPA 5
 
-O próximo agente deve implementar GitHub Actions automação e bot de issues:
+### GitHub Actions Workflows
+- `.github/workflows/refresh.yml` — cron 6h: ingest → budget check → classify → build → write-health → commit → deploy
+- `.github/workflows/deploy-site.yml` — deploy on push to site/data/generator paths
+- `.github/workflows/bot.yml` — issue bot trigger (opened + comment)
+- `.github/workflows/weekly-digest.yml` — Monday 12 UTC digest generation
+- `.github/workflows/ci.yml` — updated with --dry-run build step
+
+### Bot de Issues (`packages/bot/`)
+- `src/types.ts` — IssueOpenedPayload, IssueCommentPayload, GitHubPayload
+- `src/handlers/on-issue-opened.ts` — submission queuing, duplicate detection, stale URL verification
+- `src/handlers/on-comment.ts` — /refresh command handler
+- `src/index.ts` — event dispatcher (GITHUB_EVENT_PATH)
+- `src/__tests__/bot.test.ts` — unit tests
+
+### Scripts adicionais
+- `scripts/check-budget.ts` — monthly spend guard, exits 1 if over limit
+- `scripts/write-health.ts` — writes data/health.json after every refresh
+- `scripts/generate-digest.ts` — weekly markdown digest in digests/
+
+### Outros
+- `.github/dependabot.yml` — npm + actions weekly updates
+- `digests/.gitkeep` — placeholder para digestos semanais
+
+## Para continuar (ETAPA 6)
+
+O próximo agente deve implementar launch, SEO e materiais de distribuição:
 
 1. Estar na pasta `E:/skillpulse/`
-2. O pipeline completo já está funcional:
-   - Ingestores: `packages/ingestors/` + `scripts/run-ingestors.ts`
-   - Classificador: `packages/classifier/` + `scripts/run-classifier.ts`
-   - Gerador: `packages/generator/` + `scripts/build-everything.ts`
-3. Implementar `.github/workflows/refresh.yml`:
-   - Trigger: schedule (a cada 6h) + workflow_dispatch
-   - Steps: pnpm install → ingest → classify → build:all → commit README e data → deploy site para GitHub Pages
-   - Usar `ANTHROPIC_API_KEY` como secret
-4. Implementar `packages/bot/` — bot de triagem de issues:
-   - Ler issues com label `submit-skill`
-   - Extrair URL do campo da issue
-   - Ingerir URL individualmente via ingestor
-   - Classificar e adicionar ao snapshot
-   - Comentar na issue com resultado
-   - Fechar issue como resolvida
-5. Workflow `.github/workflows/bot.yml`:
-   - Trigger: `issues` (opened, labeled)
-   - Chamar o bot quando label `submit-skill` adicionada
-6. Deploy para GitHub Pages:
-   - Output do Astro build em `site/dist/`
-   - Publicar via `actions/deploy-pages`
-   - URL final: `https://corazzione.github.io/skillpulse`
+2. Configurar GitHub Pages no repositório:
+   - Settings → Pages → Source: GitHub Actions
+   - Adicionar secret `ANTHROPIC_API_KEY` em Settings → Secrets
+   - Adicionar variável `ANTHROPIC_MONTHLY_BUDGET_USD` em Settings → Variables (valor: `50`)
+3. SEO e branding assets:
+   - Criar `site/public/og-image.png` (1200x630, MC. dark theme)
+   - Criar `site/public/favicon.ico` e `site/public/favicon.svg`
+   - Verificar og:image, og:title, og:description em todas as páginas
+   - Adicionar `site/public/robots.txt` e `site/public/sitemap.xml` (ou gerar via Astro)
+4. Metodologia e documentação:
+   - Criar `METHODOLOGY.md` explicando o pipeline e fórmula do Pulse Score
+   - Atualizar `CONTRIBUTING.md` com processo de submissão via issues
+   - Criar `.github/ISSUE_TEMPLATE/submit-skill.yml` e `report-stale.yml` se não existirem
+5. Launch materials:
+   - Criar post de launch para Hacker News (Show HN)
+   - Criar post para Reddit r/MachineLearning / r/ClaudeAI
+   - Criar announcement para GitHub Discussions
+6. Monitoramento:
+   - Verificar que `data/health.json` é atualizado após primeiro refresh
+   - Testar bot de issues com issue real de submissão
+   - Confirmar URL final: `https://corazzione.github.io/skillpulse`
 
 ## Stack
 

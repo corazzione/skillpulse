@@ -33,3 +33,6 @@ jobs:
 
       - name: Test
         run: pnpm -r test
+
+      - name: Build dry-run
+        run: pnpm tsx scripts/build-everything.ts --dry-run

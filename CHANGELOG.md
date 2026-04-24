@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-04-24
+
+### Added
+- GitHub Actions: refresh.yml (every 6h), deploy-site.yml, bot.yml, weekly-digest.yml
+- CI workflow updated with --dry-run build check
+- Issue bot: submission queuing, duplicate detection, stale URL verification
+- Budget guard: scripts/check-budget.ts aborts classifier if monthly spend exceeded
+- scripts/write-health.ts: data/health.json updated every refresh
+- scripts/generate-digest.ts: weekly markdown digest in digests/
+- Dependabot config for npm + actions
+
 ## [0.4.0] - 2026-04-24
 
 ### Added
