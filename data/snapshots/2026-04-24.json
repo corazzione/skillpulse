@@ -1,0 +1,872 @@
+{
+  "generatedAt": "2026-04-24T05:09:54.482Z",
+  "totalEntries": 33,
+  "entries": [
+    {
+      "id": "gh:modelcontextprotocol/servers/filesystem",
+      "name": "@modelcontextprotocol/server-filesystem",
+      "description": "Secure filesystem access for MCP — read, write, search files with configurable permissions.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "author": "modelcontextprotocol",
+      "stars": 18500,
+      "downloadsWeekly": 420000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "filesystem",
+      "tags": [
+        "official",
+        "filesystem",
+        "files",
+        "io"
+      ],
+      "firstSeenAt": "2025-10-26T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 98,
+      "trend": "stable"
+    },
+    {
+      "id": "gh:modelcontextprotocol/servers/github",
+      "name": "@modelcontextprotocol/server-github",
+      "description": "Official MCP server for GitHub — manage repos, issues, PRs, search code, and more via the GitHub API.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/github",
+      "author": "modelcontextprotocol",
+      "stars": 18500,
+      "downloadsWeekly": 380000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "version-control",
+      "tags": [
+        "official",
+        "github",
+        "git",
+        "code-review"
+      ],
+      "firstSeenAt": "2025-10-26T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 96,
+      "trend": "stable"
+    },
+    {
+      "id": "gh:modelcontextprotocol/servers/postgres",
+      "name": "@modelcontextprotocol/server-postgres",
+      "description": "Read-only Postgres access for LLMs — query schemas and data with safe, parameterized SQL.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres",
+      "author": "modelcontextprotocol",
+      "stars": 18500,
+      "downloadsWeekly": 210000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "database",
+      "tags": [
+        "official",
+        "postgres",
+        "sql",
+        "database"
+      ],
+      "firstSeenAt": "2025-10-26T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 92,
+      "trend": "stable"
+    },
+    {
+      "id": "gh:modelcontextprotocol/servers/sqlite",
+      "name": "@modelcontextprotocol/server-sqlite",
+      "description": "SQLite MCP server with query, schema inspection, and business-insights memo tooling.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite",
+      "author": "modelcontextprotocol",
+      "stars": 18500,
+      "downloadsWeekly": 145000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "database",
+      "tags": [
+        "official",
+        "sqlite",
+        "sql",
+        "database"
+      ],
+      "firstSeenAt": "2025-10-26T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 88,
+      "trend": "stable"
+    },
+    {
+      "id": "gh:modelcontextprotocol/servers/brave-search",
+      "name": "@modelcontextprotocol/server-brave-search",
+      "description": "Web + local search via Brave Search API — up-to-date context without scraping.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search",
+      "author": "modelcontextprotocol",
+      "stars": 18500,
+      "downloadsWeekly": 175000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "web-search",
+      "tags": [
+        "official",
+        "search",
+        "web",
+        "brave"
+      ],
+      "firstSeenAt": "2025-10-26T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 90,
+      "trend": "stable"
+    },
+    {
+      "id": "gh:modelcontextprotocol/servers/fetch",
+      "name": "@modelcontextprotocol/server-fetch",
+      "description": "Fetch and convert web content (HTML → markdown) for LLM consumption.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+      "author": "modelcontextprotocol",
+      "stars": 18500,
+      "downloadsWeekly": 260000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "web-browsing",
+      "tags": [
+        "official",
+        "fetch",
+        "http",
+        "scraping"
+      ],
+      "firstSeenAt": "2025-10-26T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 91,
+      "trend": "stable"
+    },
+    {
+      "id": "gh:modelcontextprotocol/servers/memory",
+      "name": "@modelcontextprotocol/server-memory",
+      "description": "Persistent knowledge-graph memory — entities, relations, and observations across sessions.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+      "author": "modelcontextprotocol",
+      "stars": 18500,
+      "downloadsWeekly": 130000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "memory",
+      "tags": [
+        "official",
+        "memory",
+        "knowledge-graph",
+        "persistence"
+      ],
+      "firstSeenAt": "2025-10-26T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 86,
+      "trend": "rising"
+    },
+    {
+      "id": "gh:modelcontextprotocol/servers/puppeteer",
+      "name": "@modelcontextprotocol/server-puppeteer",
+      "description": "Browser automation via Puppeteer — navigate, screenshot, click, fill forms.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer",
+      "author": "modelcontextprotocol",
+      "stars": 18500,
+      "downloadsWeekly": 95000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "browser-automation",
+      "tags": [
+        "official",
+        "puppeteer",
+        "browser",
+        "e2e"
+      ],
+      "firstSeenAt": "2025-10-26T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 84,
+      "trend": "stable"
+    },
+    {
+      "id": "gh:modelcontextprotocol/servers/slack",
+      "name": "@modelcontextprotocol/server-slack",
+      "description": "Slack MCP server — post messages, read channels, manage users.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack",
+      "author": "modelcontextprotocol",
+      "stars": 18500,
+      "downloadsWeekly": 72000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "communication",
+      "tags": [
+        "official",
+        "slack",
+        "messaging"
+      ],
+      "firstSeenAt": "2025-10-26T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 80,
+      "trend": "stable"
+    },
+    {
+      "id": "gh:modelcontextprotocol/servers/gdrive",
+      "name": "@modelcontextprotocol/server-gdrive",
+      "description": "Google Drive MCP server — list, read, and search Drive files/folders.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive",
+      "author": "modelcontextprotocol",
+      "stars": 18500,
+      "downloadsWeekly": 54000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "cloud-storage",
+      "tags": [
+        "official",
+        "google-drive",
+        "storage"
+      ],
+      "firstSeenAt": "2025-10-26T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 78,
+      "trend": "stable"
+    },
+    {
+      "id": "gh:jlowin/fastmcp",
+      "name": "fastmcp",
+      "description": "The fast, Pythonic way to build MCP servers and clients. Decorators, type hints, auto-schema.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/jlowin/fastmcp",
+      "author": "jlowin",
+      "stars": 11200,
+      "downloadsWeekly": 95000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "frameworks",
+      "tags": [
+        "framework",
+        "python",
+        "sdk",
+        "builder"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 94,
+      "trend": "rising"
+    },
+    {
+      "id": "gh:GLips/Figma-Context-MCP",
+      "name": "figma-developer-mcp",
+      "description": "Give Cursor/Claude/any MCP client access to your Figma files — implement designs faithfully.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/GLips/Figma-Context-MCP",
+      "author": "GLips",
+      "stars": 9100,
+      "downloadsWeekly": 47000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "design",
+      "tags": [
+        "figma",
+        "design",
+        "ui"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 93,
+      "trend": "rising"
+    },
+    {
+      "id": "gh:microsoft/playwright-mcp",
+      "name": "@playwright/mcp",
+      "description": "Official Playwright MCP server — drive browsers with accessibility-tree snapshots, no vision model needed.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/microsoft/playwright-mcp",
+      "author": "microsoft",
+      "stars": 13400,
+      "downloadsWeekly": 180000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "browser-automation",
+      "tags": [
+        "playwright",
+        "browser",
+        "e2e",
+        "official"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 97,
+      "trend": "rising"
+    },
+    {
+      "id": "gh:upstash/context7",
+      "name": "@upstash/context7-mcp",
+      "description": "Up-to-date, version-specific docs and code examples for any library — eliminates LLM hallucinations.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/upstash/context7",
+      "author": "upstash",
+      "stars": 22000,
+      "downloadsWeekly": 310000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "documentation",
+      "tags": [
+        "docs",
+        "context",
+        "hot",
+        "anti-hallucination"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 99,
+      "trend": "rising"
+    },
+    {
+      "id": "gh:exa-labs/exa-mcp-server",
+      "name": "exa-mcp-server",
+      "description": "Exa semantic search MCP — high-quality web search built for AI agents.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/exa-labs/exa-mcp-server",
+      "author": "exa-labs",
+      "stars": 2400,
+      "downloadsWeekly": 38000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "web-search",
+      "tags": [
+        "search",
+        "semantic",
+        "exa"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 82,
+      "trend": "rising"
+    },
+    {
+      "id": "gh:supabase-community/supabase-mcp",
+      "name": "@supabase/mcp-server-supabase",
+      "description": "Official Supabase MCP — manage projects, tables, SQL, storage, edge functions.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/supabase-community/supabase-mcp",
+      "author": "supabase-community",
+      "stars": 3800,
+      "downloadsWeekly": 62000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "database",
+      "tags": [
+        "supabase",
+        "postgres",
+        "baas"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 85,
+      "trend": "rising"
+    },
+    {
+      "id": "gh:cloudflare/mcp-server-cloudflare",
+      "name": "@cloudflare/mcp-server-cloudflare",
+      "description": "Manage Cloudflare Workers, KV, R2, D1 and more via MCP.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/cloudflare/mcp-server-cloudflare",
+      "author": "cloudflare",
+      "stars": 2900,
+      "downloadsWeekly": 41000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "cloud-infra",
+      "tags": [
+        "cloudflare",
+        "workers",
+        "edge"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 81,
+      "trend": "stable"
+    },
+    {
+      "id": "gh:sentry/sentry-mcp",
+      "name": "@sentry/mcp-server",
+      "description": "Sentry MCP server — query errors, performance data, and release info.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/getsentry/sentry-mcp",
+      "author": "getsentry",
+      "stars": 1600,
+      "downloadsWeekly": 27000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "observability",
+      "tags": [
+        "sentry",
+        "monitoring",
+        "errors"
+      ],
+      "firstSeenAt": "2026-04-17T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 76,
+      "trend": "new"
+    },
+    {
+      "id": "gh:stripe/agent-toolkit",
+      "name": "@stripe/mcp",
+      "description": "Stripe MCP server — create payments, subscriptions, customers with safe scoped API keys.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/stripe/agent-toolkit",
+      "author": "stripe",
+      "stars": 2100,
+      "downloadsWeekly": 34000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "payments",
+      "tags": [
+        "stripe",
+        "payments",
+        "billing"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 83,
+      "trend": "rising"
+    },
+    {
+      "id": "gh:sooperset/mcp-atlassian",
+      "name": "mcp-atlassian",
+      "description": "Jira + Confluence MCP — read/write issues, search pages, manage sprints.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/sooperset/mcp-atlassian",
+      "author": "sooperset",
+      "stars": 2300,
+      "downloadsWeekly": 21000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "project-management",
+      "tags": [
+        "jira",
+        "confluence",
+        "atlassian"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 77,
+      "trend": "stable"
+    },
+    {
+      "id": "gh:zcaceres/fetch-mcp",
+      "name": "fetch-mcp",
+      "description": "Fetch URLs (HTML/JSON/text/markdown) with schema-validated outputs — built-in retry + caching.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/zcaceres/fetch-mcp",
+      "author": "zcaceres",
+      "stars": 1200,
+      "downloadsWeekly": 19000,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "windsurf",
+        "generic"
+      ],
+      "category": "web-browsing",
+      "tags": [
+        "fetch",
+        "http",
+        "scraping"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 72,
+      "trend": "stable"
+    },
+    {
+      "id": "gh:bnb-chain/bnbchain-mcp",
+      "name": "bnbchain-mcp",
+      "description": "Query BNB Chain data — balances, transactions, token info, smart contract state.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/bnb-chain/bnbchain-mcp",
+      "author": "bnb-chain",
+      "stars": 580,
+      "downloadsWeekly": 4200,
+      "compat": [
+        "claude-code",
+        "cursor",
+        "generic"
+      ],
+      "category": "blockchain",
+      "tags": [
+        "bnb",
+        "blockchain",
+        "web3"
+      ],
+      "firstSeenAt": "2026-04-17T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 58,
+      "trend": "new"
+    },
+    {
+      "id": "gh:anthropics/claude-cookbooks/code-review-skill",
+      "name": "code-review",
+      "description": "Opinionated code review skill for Claude Code — checks SOLID, security, performance, style.",
+      "kind": "skill",
+      "source": "github",
+      "sourceUrl": "https://github.com/anthropics/anthropic-cookbook",
+      "author": "anthropics",
+      "stars": 14200,
+      "compat": [
+        "claude-code"
+      ],
+      "category": "code-quality",
+      "tags": [
+        "review",
+        "quality",
+        "solid",
+        "official"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 89,
+      "trend": "stable"
+    },
+    {
+      "id": "gh:wshobson/commands",
+      "name": "wshobson/commands",
+      "description": "Curated Claude Code slash commands — 50+ battle-tested prompts for real workflows.",
+      "kind": "prompt-pack",
+      "source": "github",
+      "sourceUrl": "https://github.com/wshobson/commands",
+      "author": "wshobson",
+      "stars": 3400,
+      "compat": [
+        "claude-code"
+      ],
+      "category": "productivity",
+      "tags": [
+        "commands",
+        "prompts",
+        "workflow"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 87,
+      "trend": "rising"
+    },
+    {
+      "id": "gh:wshobson/agents",
+      "name": "wshobson/agents",
+      "description": "Specialized subagents for Claude Code — security, architecture, debugging, testing.",
+      "kind": "skill",
+      "source": "github",
+      "sourceUrl": "https://github.com/wshobson/agents",
+      "author": "wshobson",
+      "stars": 5800,
+      "compat": [
+        "claude-code"
+      ],
+      "category": "agents",
+      "tags": [
+        "subagents",
+        "specialists",
+        "workflow"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 90,
+      "trend": "rising"
+    },
+    {
+      "id": "gh:hesreallyhim/awesome-claude-code",
+      "name": "awesome-claude-code",
+      "description": "Curated list of slash commands, CLAUDE.md files, CLI tools, and workflows for Claude Code.",
+      "kind": "prompt-pack",
+      "source": "github",
+      "sourceUrl": "https://github.com/hesreallyhim/awesome-claude-code",
+      "author": "hesreallyhim",
+      "stars": 4100,
+      "compat": [
+        "claude-code"
+      ],
+      "category": "meta",
+      "tags": [
+        "awesome-list",
+        "directory",
+        "discovery"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 86,
+      "trend": "rising"
+    },
+    {
+      "id": "gh:pchalasani/claude-code-tools",
+      "name": "claude-code-tools",
+      "description": "Swiss-army toolbelt skill — git automation, test runners, lint/format bridges for Claude Code.",
+      "kind": "skill",
+      "source": "github",
+      "sourceUrl": "https://github.com/pchalasani/claude-code-tools",
+      "author": "pchalasani",
+      "stars": 920,
+      "compat": [
+        "claude-code"
+      ],
+      "category": "productivity",
+      "tags": [
+        "tools",
+        "git",
+        "testing"
+      ],
+      "firstSeenAt": "2026-04-17T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 71,
+      "trend": "new"
+    },
+    {
+      "id": "gh:BeehiveInnovations/zen-mcp-server",
+      "name": "zen-mcp-server",
+      "description": "Multi-model orchestration (Gemini, o3, Claude) for Claude Code — debate, consensus, code review.",
+      "kind": "mcp-server",
+      "source": "github",
+      "sourceUrl": "https://github.com/BeehiveInnovations/zen-mcp-server",
+      "author": "BeehiveInnovations",
+      "stars": 6700,
+      "downloadsWeekly": 48000,
+      "compat": [
+        "claude-code",
+        "cursor"
+      ],
+      "category": "agents",
+      "tags": [
+        "multi-model",
+        "orchestration",
+        "consensus"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 92,
+      "trend": "rising"
+    },
+    {
+      "id": "gh:PatrickJS/awesome-cursorrules",
+      "name": "awesome-cursorrules",
+      "description": "Curated .cursorrules for Cursor AI — framework-specific, language-specific, stack-specific.",
+      "kind": "prompt-pack",
+      "source": "github",
+      "sourceUrl": "https://github.com/PatrickJS/awesome-cursorrules",
+      "author": "PatrickJS",
+      "stars": 31000,
+      "compat": [
+        "cursor"
+      ],
+      "category": "meta",
+      "tags": [
+        "cursorrules",
+        "awesome-list",
+        "directory"
+      ],
+      "firstSeenAt": "2025-10-26T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 95,
+      "trend": "rising"
+    },
+    {
+      "id": "gh:anthropics/claude-code",
+      "name": "@anthropic-ai/claude-code",
+      "description": "The official Claude Code CLI — agentic coding in your terminal, MCP-native.",
+      "kind": "cli-tool",
+      "source": "npm",
+      "sourceUrl": "https://www.npmjs.com/package/@anthropic-ai/claude-code",
+      "author": "anthropics",
+      "stars": 29000,
+      "downloadsWeekly": 850000,
+      "compat": [
+        "claude-code"
+      ],
+      "category": "agents",
+      "tags": [
+        "official",
+        "cli",
+        "claude"
+      ],
+      "firstSeenAt": "2025-10-26T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 100,
+      "trend": "stable"
+    },
+    {
+      "id": "gh:openai/codex",
+      "name": "@openai/codex",
+      "description": "The OpenAI Codex CLI — terminal-native coding agent with tool use and sandbox execution.",
+      "kind": "cli-tool",
+      "source": "npm",
+      "sourceUrl": "https://www.npmjs.com/package/@openai/codex",
+      "author": "openai",
+      "stars": 19400,
+      "downloadsWeekly": 340000,
+      "compat": [
+        "codex-cli"
+      ],
+      "category": "agents",
+      "tags": [
+        "official",
+        "cli",
+        "codex",
+        "openai"
+      ],
+      "firstSeenAt": "2025-10-26T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 94,
+      "trend": "rising"
+    },
+    {
+      "id": "gh:google-gemini/gemini-cli",
+      "name": "@google/gemini-cli",
+      "description": "Google Gemini CLI — agentic coding with Gemini 2.5 models, MCP-compatible.",
+      "kind": "cli-tool",
+      "source": "npm",
+      "sourceUrl": "https://www.npmjs.com/package/@google/gemini-cli",
+      "author": "google-gemini",
+      "stars": 15200,
+      "downloadsWeekly": 240000,
+      "compat": [
+        "gemini-cli"
+      ],
+      "category": "agents",
+      "tags": [
+        "official",
+        "cli",
+        "gemini",
+        "google"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 91,
+      "trend": "rising"
+    },
+    {
+      "id": "gh:block/goose",
+      "name": "goose",
+      "description": "Local, extensible AI agent CLI — MCP-native, supports multiple providers.",
+      "kind": "cli-tool",
+      "source": "github",
+      "sourceUrl": "https://github.com/block/goose",
+      "author": "block",
+      "stars": 8300,
+      "compat": [
+        "generic"
+      ],
+      "category": "agents",
+      "tags": [
+        "agent",
+        "cli",
+        "mcp",
+        "local"
+      ],
+      "firstSeenAt": "2026-03-25T05:09:54.483Z",
+      "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
+      "pulseScore": 84,
+      "trend": "rising"
+    }
+  ]
+}

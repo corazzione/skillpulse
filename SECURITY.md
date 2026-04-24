@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-Please report security vulnerabilities to **markus@corazzione.dev**.
+Please report security vulnerabilities to **markuscorazzione@gmail.com**.
 
 Do **not** open public issues for security vulnerabilities.
 

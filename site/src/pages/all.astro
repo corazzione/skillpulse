@@ -15,7 +15,7 @@ interface Entry {
   category: string;
 }
 
-const dataPath = join(process.cwd(), 'data/snapshots/latest.json');
+const dataPath = join(process.cwd(), '../data/snapshots/latest.json');
 const snapshot: { generatedAt: string; totalEntries: number; entries: Entry[] } = existsSync(
   dataPath,
 )

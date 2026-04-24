@@ -54,7 +54,7 @@ function addRank<T>(items: T[]): (T & { rank: number })[] {
 }
 
 export async function generateReadme(snapshot: DataSnapshot): Promise<string> {
-  const tplPath = join(__dirname, '../../templates/README.md.hbs');
+  const tplPath = join(__dirname, '../templates/README.md.hbs');
   const source = await readFile(tplPath, 'utf-8');
   const template = Handlebars.compile(source);
 

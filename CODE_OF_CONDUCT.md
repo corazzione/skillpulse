@@ -19,7 +19,7 @@ Examples of unacceptable behavior:
 
 ## Enforcement
 
-Instances of abusive behavior may be reported to markus@corazzione.dev. All complaints will be reviewed and investigated.
+Instances of abusive behavior may be reported to markuscorazzione@gmail.com. All complaints will be reviewed and investigated.
 
 ## Attribution
 
