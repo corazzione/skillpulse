@@ -9,6 +9,7 @@
 
 [![Build](https://github.com/corazzione/skillpulse/actions/workflows/ci.yml/badge.svg)](https://github.com/corazzione/skillpulse/actions)
 ![Entries](https://img.shields.io/badge/entries-33-D4882A?style=flat)
+![Agents](https://img.shields.io/badge/agents_supported-5-C9A84C?style=flat)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 📡 Auto-updated from 7 sources · 🧠 AI-classified · 🤖 [Submit a skill](https://github.com/corazzione/skillpulse/issues/new?template=submit-skill.yml)
