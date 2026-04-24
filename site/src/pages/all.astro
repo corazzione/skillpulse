@@ -1,0 +1,124 @@
+---
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import EntryCard from '../components/EntryCard.astro';
+import Base from '../layouts/Base.astro';
+
+interface Entry {
+  trend: string;
+  pulseScore: number;
+  name: string;
+  description: string;
+  kind: string;
+  sourceUrl: string;
+  stars?: number;
+  category: string;
+}
+
+const dataPath = join(process.cwd(), 'data/snapshots/latest.json');
+const snapshot: { generatedAt: string; totalEntries: number; entries: Entry[] } = existsSync(
+  dataPath,
+)
+  ? JSON.parse(readFileSync(dataPath, 'utf-8'))
+  : { generatedAt: new Date().toISOString(), totalEntries: 0, entries: [] };
+
+const entries = snapshot.entries;
+const categories = [...new Set(entries.map((e) => e.category))].sort();
+---
+
+<Base
+  title="All Skills — SkillPulse"
+  description={`Browse all ${entries.length} AI agent skills.`}
+>
+  <div class="max-w-7xl mx-auto px-6 py-10">
+    <h1 class="font-display font-extrabold text-3xl mb-2">All Skills</h1>
+    <p class="text-muted mb-6">
+      {entries.length} entries · Press <kbd class="bg-border px-1.5 py-0.5 rounded text-xs font-mono"
+        >/</kbd
+      > to search
+    </p>
+    <input
+      id="search"
+      type="search"
+      placeholder="Search skills, MCPs, plugins..."
+      class="w-full bg-surface border border-border rounded-lg px-4 py-3 text-text placeholder-muted focus:outline-none focus:border-accent mb-6"
+      aria-label="Search skills"
+    />
+    <div class="flex gap-2 flex-wrap mb-8">
+      <button
+        class="cat-btn bg-accent text-bg px-3 py-1.5 rounded text-sm font-medium"
+        data-cat="all">All</button
+      >
+      {
+        categories.map((cat) => (
+          <button
+            class="cat-btn bg-surface border border-border text-muted px-3 py-1.5 rounded text-sm hover:border-accent hover:text-text transition-colors"
+            data-cat={cat}
+          >
+            {cat.replace(/-/g, ' ')}
+          </button>
+        ))
+      }
+    </div>
+    <div id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {
+        entries.map((entry, i) => (
+          <div
+            class="card"
+            data-cat={entry.category}
+            data-name={entry.name.toLowerCase()}
+            data-desc={entry.description.toLowerCase()}
+          >
+            <EntryCard {...entry} rank={i + 1} />
+          </div>
+        ))
+      }
+    </div>
+    <p id="empty" class="hidden text-center text-muted py-12">No results found.</p>
+  </div>
+  <script>
+    import Fuse from 'fuse.js';
+    const cards = [...document.querySelectorAll<HTMLElement>('.card')];
+    const data = cards.map((el) => ({
+      el,
+      name: el.dataset['name'] ?? '',
+      desc: el.dataset['desc'] ?? '',
+      cat: el.dataset['cat'] ?? '',
+    }));
+    const fuse = new Fuse(data, { keys: ['name', 'desc'], threshold: 0.4 });
+    const searchEl = document.getElementById('search') as HTMLInputElement;
+    const emptyEl = document.getElementById('empty') as HTMLElement;
+    const catBtns = document.querySelectorAll<HTMLButtonElement>('.cat-btn');
+    let activeCat = 'all';
+    function update() {
+      const q = searchEl.value.trim();
+      let filtered = q ? fuse.search(q).map((r) => r.item) : data;
+      if (activeCat !== 'all') filtered = filtered.filter((d) => d.cat === activeCat);
+      let visible = 0;
+      for (const d of data) {
+        const show = filtered.includes(d);
+        d.el.style.display = show ? '' : 'none';
+        if (show) visible++;
+      }
+      emptyEl.classList.toggle('hidden', visible > 0);
+    }
+    searchEl.addEventListener('input', update);
+    catBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        catBtns.forEach((b) => {
+          b.className =
+            'cat-btn bg-surface border border-border text-muted px-3 py-1.5 rounded text-sm hover:border-accent hover:text-text transition-colors';
+        });
+        btn.className = 'cat-btn bg-accent text-bg px-3 py-1.5 rounded text-sm font-medium';
+        activeCat = btn.dataset['cat'] ?? 'all';
+        update();
+      });
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== searchEl) {
+        e.preventDefault();
+        searchEl.focus();
+      }
+    });
+  </script>
+</Base>

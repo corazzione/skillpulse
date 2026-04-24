@@ -1,0 +1,62 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  kind: string;
+  sourceUrl: string;
+  stars?: number;
+  pulseScore: number;
+  trend: string;
+  category: string;
+  rank?: number;
+}
+const { name, description, kind, sourceUrl, stars, pulseScore, trend, category, rank } =
+  Astro.props;
+const kindEmoji: Record<string, string> = {
+  skill: '🧠',
+  'mcp-server': '🔌',
+  plugin: '🧩',
+  'prompt-pack': '💬',
+  'cli-tool': '⚡',
+};
+const trendEmoji: Record<string, string> = {
+  new: '🚀',
+  rising: '📈',
+  stable: '➡️',
+  declining: '📉',
+};
+---
+
+<article class="bg-surface border border-border rounded-lg p-5 hover:border-accent/50 transition-colors">
+  <div class="flex items-start justify-between gap-3 mb-3">
+    <div class="flex items-center gap-2 min-w-0">
+      {rank && <span class="text-muted font-mono text-sm shrink-0">#{rank}</span>}
+      <span aria-hidden="true">{kindEmoji[kind] ?? '🔧'}</span>
+      <a
+        href={sourceUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-display font-semibold hover:text-accent transition-colors truncate"
+      >
+        {name}
+      </a>
+    </div>
+    <span class="text-muted text-sm shrink-0" aria-label={`Trend: ${trend}`}
+      >{trendEmoji[trend] ?? '➡️'}</span
+    >
+  </div>
+  <p class="text-muted text-sm mb-3 line-clamp-2">{description}</p>
+  <div class="flex items-center justify-between gap-2 flex-wrap">
+    <div class="flex items-center gap-3 text-xs text-muted">
+      {stars !== undefined && <span>⭐ {stars.toLocaleString()}</span>}
+      <span class="bg-accent/20 text-accent px-2 py-0.5 rounded font-mono">{pulseScore}/100</span>
+      <span class="bg-border px-2 py-0.5 rounded">{category.replace(/-/g, ' ')}</span>
+    </div>
+    <a
+      href={sourceUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-xs text-muted hover:text-accent">View →</a
+    >
+  </div>
+</article>

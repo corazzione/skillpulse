@@ -1,0 +1,76 @@
+---
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import EntryCard from '../components/EntryCard.astro';
+import Base from '../layouts/Base.astro';
+
+interface Entry {
+  trend: string;
+  pulseScore: number;
+  name: string;
+  description: string;
+  kind: string;
+  sourceUrl: string;
+  stars?: number;
+  category: string;
+}
+
+const dataPath = join(process.cwd(), 'data/snapshots/latest.json');
+const snapshot: { generatedAt: string; totalEntries: number; entries: Entry[] } = existsSync(
+  dataPath,
+)
+  ? JSON.parse(readFileSync(dataPath, 'utf-8'))
+  : { generatedAt: new Date().toISOString(), totalEntries: 0, entries: [] };
+
+const topTrending = snapshot.entries
+  .filter((e) => e.trend === 'rising' || e.trend === 'new')
+  .sort((a, b) => b.pulseScore - a.pulseScore)
+  .slice(0, 20);
+---
+
+<Base title="SkillPulse — AI Agent Skills Registry">
+  <section class="max-w-7xl mx-auto px-6 py-16 text-center">
+    <div class="flex items-center justify-center gap-3 mb-6">
+      <span class="inline-block w-4 h-4 bg-accent rounded-sm" aria-hidden="true"></span>
+      <h1 class="font-display font-extrabold text-5xl">SkillPulse</h1>
+    </div>
+    <p class="text-muted text-xl max-w-2xl mx-auto mb-8">
+      The living registry of AI agent skills, MCPs, and prompts.<br />
+      <span class="text-gold">Refreshed every 6h automatically.</span>
+    </p>
+    <div class="flex items-center justify-center gap-4 flex-wrap">
+      <a
+        href="/skillpulse/all"
+        class="bg-accent text-bg px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+      >
+        Browse All {snapshot.totalEntries} Skills
+      </a>
+      <a
+        href="https://github.com/corazzione/skillpulse/issues/new?template=submit-skill.yml"
+        class="border border-border px-6 py-3 rounded-lg text-muted hover:border-accent hover:text-text transition-colors"
+      >
+        ➕ Submit a Skill
+      </a>
+    </div>
+  </section>
+  <section class="max-w-7xl mx-auto px-6 pb-16">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="font-display font-extrabold text-2xl flex items-center gap-2">🔥 Top Trending</h2>
+      <a href="/skillpulse/all" class="text-accent text-sm hover:underline">See all →</a>
+    </div>
+    {
+      topTrending.length === 0 ? (
+        <div class="text-center py-16 text-muted">
+          <p class="text-4xl mb-4">🔄</p>
+          <p>Data pipeline building... Check back soon!</p>
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {topTrending.map((entry, i) => (
+            <EntryCard {...entry} rank={i + 1} />
+          ))}
+        </div>
+      )
+    }
+  </section>
+</Base>

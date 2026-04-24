@@ -9,7 +9,7 @@
 | ETAPA 1 | Fundação, arquitetura e esqueleto | Concluído | v0.1.0 |
 | ETAPA 2 | Ingestores (scrapers) | ✅ Concluído | v0.2.0 |
 | ETAPA 3 | Classificador de IA e scoring | ✅ Concluído | v0.3.0 |
-| ETAPA 4 | Gerador de README e site estático | Pendente | — |
+| ETAPA 4 | Gerador de README e site estático | ✅ Concluído | v0.4.0 |
 | ETAPA 5 | GitHub Actions e bot de issues | Pendente | — |
 | ETAPA 6 | Launch, SEO e distribuição | Pendente | — |
 
@@ -37,26 +37,56 @@
 - `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`, `SECURITY.md`
 - `README.md` — placeholder com branding MC.
 
-## Para continuar (ETAPA 4)
+## O que foi criado na ETAPA 4
 
-O próximo agente deve implementar o gerador de README e site estático:
+### Gerador de README (`packages/generator/`)
+- `src/readme.ts` — Handlebars template engine: seções Trending, New This Week, All-Time Top 30, By Category, By Agent
+- `src/site-data.ts` — helpers para filtrar/buscar snapshots
+- `src/index.ts` — re-exports públicos
+- `templates/README.md.hbs` — template com marcadores SKILLPULSE:START/END para updates parciais
+- Testes: `src/__tests__/readme.test.ts`, `src/__tests__/site-data.test.ts` (6 testes)
 
-1. Ler `skillpulse-claude-code-plan.md` (seção ETAPA 4)
-2. Estar na pasta `E:/skillpulse/`
-3. O pipeline classificador já está funcional em `packages/classifier/`
-4. O snapshot mais recente estará em `data/snapshots/latest.json` (formato `DataSnapshot`)
-5. Implementar `packages/generator/` para:
-   - Ler `data/snapshots/latest.json`
-   - Gerar `README.md` atualizado na raiz com tabela de top skills por categoria
-   - Gerar badges/shields dinâmicos
-6. Inicializar site Astro em `site/` com:
-   - Branding MC. (background `#0F0F0F`, accent `#D4882A`, dourado `#C9A84C`)
-   - Tipografia: Outfit 800 (headings), Space Mono (código)
-   - Listagem de skills por categoria, paginada
-   - Página de detalhes por skill
-   - Busca client-side
-   - SSG (static site generation) com dados de `data/snapshots/latest.json`
-7. Script `scripts/run-generator.ts` + `pnpm generate` no root
+### Site Astro (`site/`)
+- `src/pages/index.astro` — hero + top trending grid
+- `src/pages/all.astro` — listagem completa com Fuse.js search e filtro por categoria
+- `src/pages/about.astro` — como funciona o pipeline
+- `src/pages/stats.astro` — métricas do ecossistema (by kind, by category)
+- `src/layouts/Base.astro` — layout com header/footer, SEO meta, Open Graph
+- `src/components/EntryCard.astro` — card de skill reutilizável
+- MC. dark theme: bg `#0F0F0F`, accent `#D4882A`, gold `#C9A84C`, Outfit + Space Mono
+- Atalho `/` para focar busca
+
+### Script de integração
+- `scripts/build-everything.ts` — gera README + build do site em sequência
+- `pnpm build:all` no root
+
+## Para continuar (ETAPA 5)
+
+O próximo agente deve implementar GitHub Actions automação e bot de issues:
+
+1. Estar na pasta `E:/skillpulse/`
+2. O pipeline completo já está funcional:
+   - Ingestores: `packages/ingestors/` + `scripts/run-ingestors.ts`
+   - Classificador: `packages/classifier/` + `scripts/run-classifier.ts`
+   - Gerador: `packages/generator/` + `scripts/build-everything.ts`
+3. Implementar `.github/workflows/refresh.yml`:
+   - Trigger: schedule (a cada 6h) + workflow_dispatch
+   - Steps: pnpm install → ingest → classify → build:all → commit README e data → deploy site para GitHub Pages
+   - Usar `ANTHROPIC_API_KEY` como secret
+4. Implementar `packages/bot/` — bot de triagem de issues:
+   - Ler issues com label `submit-skill`
+   - Extrair URL do campo da issue
+   - Ingerir URL individualmente via ingestor
+   - Classificar e adicionar ao snapshot
+   - Comentar na issue com resultado
+   - Fechar issue como resolvida
+5. Workflow `.github/workflows/bot.yml`:
+   - Trigger: `issues` (opened, labeled)
+   - Chamar o bot quando label `submit-skill` adicionada
+6. Deploy para GitHub Pages:
+   - Output do Astro build em `site/dist/`
+   - Publicar via `actions/deploy-pages`
+   - URL final: `https://corazzione.github.io/skillpulse`
 
 ## Stack
 
@@ -65,7 +95,7 @@ O próximo agente deve implementar o gerador de README e site estático:
 - **Lint/format:** Biome
 - **Testes:** Vitest
 - **CI:** GitHub Actions
-- **Site:** Astro (a ser inicializado na ETAPA 4)
+- **Site:** Astro 5 (SSG, `site/`, deploy para GitHub Pages)
 - **IA:** Anthropic Claude haiku-4-5 / sonnet-4-6
 
 ## Branding (MC.)

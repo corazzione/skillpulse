@@ -1,1 +1,2 @@
-export const PACKAGE_NAME = '@skillpulse/generator';
+export * from './readme.js';
+export * from './site-data.js';

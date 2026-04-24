@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="About — SkillPulse">
+  <div class="max-w-3xl mx-auto px-6 py-12">
+    <h1 class="font-display font-extrabold text-4xl mb-4">About SkillPulse</h1>
+    <p class="text-muted mb-8">The living registry, automated end-to-end.</p>
+    <section class="mb-10">
+      <h2 class="font-display font-bold text-2xl mb-4">Why it exists</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Awesome lists die. They're manually curated and go stale when the maintainer loses interest.
+        SkillPulse is a fully automated pipeline that discovers, classifies, and ranks AI agent
+        skills every 6 hours — no curator bottleneck.
+      </p>
+    </section>
+    <section class="mb-10">
+      <h2 class="font-display font-bold text-2xl mb-4">How it works</h2>
+      <div class="space-y-4">
+        {
+          [
+            ['1', 'Ingest', 'Scrapers poll GitHub, npm, PyPI, HN, Reddit, and Anthropic Registry every 6h.'],
+            [
+              '2',
+              'Classify',
+              'Claude Haiku categorizes each entry. Low-confidence results escalate to Sonnet.',
+            ],
+            [
+              '3',
+              'Score',
+              'Pulse Score 0–100: stars 30%, growth 25%, recency 20%, cross-source 15%, confidence 10%.',
+            ],
+            [
+              '4',
+              'Publish',
+              'README and this site rebuild automatically. All data is versioned in git.',
+            ],
+          ].map(([step, title, desc]) => (
+            <div class="flex gap-4">
+              <span class="font-display font-extrabold text-accent text-xl shrink-0 w-8">
+                {step}.
+              </span>
+              <div>
+                <h3 class="font-semibold mb-1">{title}</h3>
+                <p class="text-muted text-sm">{desc}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+    <section>
+      <h2 class="font-display font-bold text-2xl mb-4">Open source</h2>
+      <p class="text-muted">
+        Fork it for any niche. <a
+          href="https://github.com/corazzione/skillpulse"
+          class="text-accent hover:underline">github.com/corazzione/skillpulse</a
+        >
+      </p>
+    </section>
+  </div>
+</Base>

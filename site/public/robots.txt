@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://corazzione.github.io/skillpulse/sitemap-index.xml

@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-04-24
+
+### Added
+- README generator (`@skillpulse/generator`) with Handlebars templates
+- Sections: Trending, New This Week, All-Time Top 30, By Category, By Agent
+- Marker-based partial README updates (SKILLPULSE:START/END preserved)
+- Astro static site: index, /all (Fuse.js search + category filter), /about, /stats pages
+- MC. dark theme (Outfit + Space Mono, #0F0F0F bg, #D4882A accent)
+- Keyboard shortcut / to focus search
+- SEO meta tags, Open Graph, sitemap, robots.txt
+- Health banner on /stats when refresh > 12h stale
+- Integration script `scripts/build-everything.ts`
+
 ## [0.3.0] - 2026-04-24
 
 ### Added
