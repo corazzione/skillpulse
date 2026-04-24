@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-04-24
+
+### Added
+- AI classifier package (`@skillpulse/classifier`)
+- Anthropic SDK wrapper with haiku/sonnet escalation, cost logging
+- Classification via tool_use with zod schema validation
+- 22 canonical categories (no AI-invented categories)
+- Deduplication: exact URL match, fuzzy name+author match
+- Pulse score formula: stars (30%), growth (25%), recency (20%), cross-source (15%), confidence (10%)
+- Trend computation: rising/stable/declining/new
+- File-based 7-day classification cache
+- Integration script `scripts/run-classifier.ts`
+
 ## [0.2.0] - 2026-04-24
 
 ### Added

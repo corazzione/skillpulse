@@ -8,7 +8,7 @@
 |-------|-----------|--------|--------|
 | ETAPA 1 | Fundação, arquitetura e esqueleto | Concluído | v0.1.0 |
 | ETAPA 2 | Ingestores (scrapers) | ✅ Concluído | v0.2.0 |
-| ETAPA 3 | Classificador de IA e scoring | Pendente | — |
+| ETAPA 3 | Classificador de IA e scoring | ✅ Concluído | v0.3.0 |
 | ETAPA 4 | Gerador de README e site estático | Pendente | — |
 | ETAPA 5 | GitHub Actions e bot de issues | Pendente | — |
 | ETAPA 6 | Launch, SEO e distribuição | Pendente | — |
@@ -37,19 +37,26 @@
 - `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`, `SECURITY.md`
 - `README.md` — placeholder com branding MC.
 
-## Para continuar (ETAPA 3)
+## Para continuar (ETAPA 4)
 
-O próximo agente deve:
-1. Ler `skillpulse-claude-code-plan.md` (seção ETAPA 3)
+O próximo agente deve implementar o gerador de README e site estático:
+
+1. Ler `skillpulse-claude-code-plan.md` (seção ETAPA 4)
 2. Estar na pasta `E:/skillpulse/`
-3. Ter `ANTHROPIC_API_KEY` e `GITHUB_TOKEN` disponíveis
-4. Implementar o classificador em `packages/classifier/`:
-   - Usar Claude haiku-4-5 para classificar `RawSkillResult` em `SkillEntry`
-   - Detectar `kind` (mcp-server, skill, plugin, prompt-pack, cli-tool)
-   - Detectar `compat` (claude-code, cursor, codex-cli, etc.)
-   - Calcular `pulseScore` e `trend`
-5. Integrar classificador com dados de `data/raw/*.json`
-6. Gerar `data/classified/*.json` com `DataSnapshot`
+3. O pipeline classificador já está funcional em `packages/classifier/`
+4. O snapshot mais recente estará em `data/snapshots/latest.json` (formato `DataSnapshot`)
+5. Implementar `packages/generator/` para:
+   - Ler `data/snapshots/latest.json`
+   - Gerar `README.md` atualizado na raiz com tabela de top skills por categoria
+   - Gerar badges/shields dinâmicos
+6. Inicializar site Astro em `site/` com:
+   - Branding MC. (background `#0F0F0F`, accent `#D4882A`, dourado `#C9A84C`)
+   - Tipografia: Outfit 800 (headings), Space Mono (código)
+   - Listagem de skills por categoria, paginada
+   - Página de detalhes por skill
+   - Busca client-side
+   - SSG (static site generation) com dados de `data/snapshots/latest.json`
+7. Script `scripts/run-generator.ts` + `pnpm generate` no root
 
 ## Stack
 

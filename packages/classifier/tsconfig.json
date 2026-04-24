@@ -1,8 +1,12 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist"
+    "rootDir": "..",
+    "outDir": "dist",
+    "paths": {
+      "@skillpulse/core": ["../core/src/index.ts"],
+      "@skillpulse/ingestors": ["../ingestors/src/index.ts"]
+    }
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "../core/src/**/*", "../ingestors/src/**/*"]
 }

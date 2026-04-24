@@ -14,7 +14,8 @@
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test",
     "build": "pnpm -r build",
-    "ingest": "tsx scripts/run-ingestors.ts"
+    "ingest": "tsx scripts/run-ingestors.ts",
+    "classify": "tsx scripts/run-classifier.ts"
   },
   "pnpm": {
     "onlyBuiltDependencies": ["@biomejs/biome", "esbuild"]
