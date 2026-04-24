@@ -1,6 +1,6 @@
 {
   "name": "@skillpulse/cli",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Share your Claude Code skills and MCPs with the SkillPulse registry — or discover what's trending.",
   "bin": {
     "skillpulse": "./dist/cli.js"
