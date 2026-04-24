@@ -7,6 +7,7 @@ interface Entry {
   kind: string;
   category: string;
   trend: string;
+  compat?: string[];
 }
 
 const dataPath = join(process.cwd(), '../data/snapshots/latest.json');
@@ -31,6 +32,24 @@ const categoryCounts = entries.reduce<Record<string, number>>((acc, e) => {
 const byCategory = Object.entries(categoryCounts)
   .sort((a, b) => b[1] - a[1])
   .slice(0, 10);
+
+const AGENT_LABELS: Record<string, string> = {
+  'claude-code': 'Claude Code',
+  cursor: 'Cursor',
+  windsurf: 'Windsurf',
+  'codex-cli': 'Codex CLI',
+  'gemini-cli': 'Gemini CLI',
+  generic: 'Generic',
+};
+const agentIds = ['claude-code', 'cursor', 'windsurf', 'codex-cli', 'gemini-cli', 'generic'];
+const agentCounts = agentIds.map(
+  (id) =>
+    [AGENT_LABELS[id] ?? id, entries.filter((e) => e.compat?.includes(id)).length] as [
+      string,
+      number,
+    ],
+);
+const byAgent = agentCounts.filter(([, count]) => count > 0).sort((a, b) => b[1] - a[1]);
 ---
 
 <Base title="Stats — SkillPulse">
@@ -74,6 +93,29 @@ const byCategory = Object.entries(categoryCounts)
           ))
         }
       </div>
+    </section>
+    <section class="mb-10">
+      <h2 class="font-display font-bold text-xl mb-4">By Agent</h2>
+      {
+        byAgent.length === 0 ? (
+          <p class="text-muted text-sm">No agent compatibility data yet.</p>
+        ) : (
+          <div class="space-y-2">
+            {byAgent.map(([label, count]) => (
+              <div class="flex items-center gap-3">
+                <span class="text-muted text-sm w-32 shrink-0">{label}</span>
+                <div class="flex-1 bg-border rounded-full h-2">
+                  <div
+                    class="bg-accent h-2 rounded-full"
+                    style={`width:${entries.length > 0 ? Math.round((count / entries.length) * 100) : 0}%`}
+                  />
+                </div>
+                <span class="text-muted text-sm w-10 text-right">{count}</span>
+              </div>
+            ))}
+          </div>
+        )
+      }
     </section>
     <section>
       <h2 class="font-display font-bold text-xl mb-4">Top Categories</h2>
