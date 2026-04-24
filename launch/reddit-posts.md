@@ -1,17 +1,30 @@
 # Reddit Launch Posts
 
-## r/ClaudeAI
+## r/ClaudeAI — v1.1
 
-**Title:** I built an auto-updating registry of Claude Code skills and MCP servers
+**Title:** I built a crowdsourced registry of Claude Code skills & MCPs — every user is a contributor
 
-I got frustrated with awesome lists going stale, so I built SkillPulse — an automated pipeline that scrapes GitHub, npm, PyPI, HN, Reddit, and the Anthropic MCP Registry every 6 hours and uses Claude to classify everything.
+After getting frustrated with awesome lists that go stale, I built SkillPulse. The twist: it updates from *two* directions.
 
-It tracks Claude Code skills, MCP servers, plugins, prompt packs, and CLI tools. You can browse by category or agent compatibility, and submit new entries via GitHub issue (the bot handles it automatically).
+**Automated side** — Scrapes 7 sources every 6h (GitHub, npm, PyPI, HN, Reddit, Anthropic MCP Registry, Tokrepo) and uses Claude Haiku to classify everything.
 
-The whole thing runs on GitHub Actions — zero infra, ~$10/month in Anthropic API costs.
+**Community side** — one command turns any Claude Code user into a contributor:
 
-Repo: https://github.com/corazzione/skillpulse
-Site: https://corazzione.github.io/skillpulse
+```bash
+npx @skillpulse/cli share
+```
+
+It scans your `~/.claude/settings.json` MCPs and `~/.claude/skills/` directory, shows you what will be shared, and opens a pre-filled GitHub issue. The bot dedupes, Claude classifies, it shows up in the registry within 6h.
+
+Or add a hook to auto-share silently on Claude Code startup.
+
+**Privacy:** anonymous (random 16-char hash), names and public URLs only, never keys/tokens, first-run consent required, `rm -rf ~/.skillpulse` to opt out.
+
+The idea is: the most valuable MCPs are the ones people actually keep installed, not the ones trending on Twitter. A registry should reflect that.
+
+MIT licensed. Would love people to `skillpulse share` to kick-start the community dataset.
+
+https://github.com/corazzione/skillpulse
 
 ---
 

@@ -74,6 +74,34 @@ importers:
         specifier: ^2.0.0
         version: 2.1.9(@types/node@22.19.17)
 
+  packages/cli:
+    dependencies:
+      '@octokit/rest':
+        specifier: ^21.0.0
+        version: 21.1.1
+      '@skillpulse/core':
+        specifier: workspace:*
+        version: link:../core
+      kleur:
+        specifier: ^4.1.5
+        version: 4.1.5
+      prompts:
+        specifier: ^2.4.2
+        version: 2.4.2
+    devDependencies:
+      '@types/node':
+        specifier: ^22.0.0
+        version: 22.19.17
+      '@types/prompts':
+        specifier: ^2.4.9
+        version: 2.4.9
+      typescript:
+        specifier: ^5.6.0
+        version: 5.9.3
+      vitest:
+        specifier: ^2.0.0
+        version: 2.1.9(@types/node@22.19.17)
+
   packages/core:
     dependencies:
       pino:
@@ -1171,6 +1199,9 @@ packages:
   '@types/node@24.12.2':
     resolution: {integrity: sha512-A1sre26ke7HDIuY/M23nd9gfB+nrmhtYyMINbjI1zHJxYteKR6qSMX56FsmjMcDb3SMcjJg5BiRRgOCC/yBD0g==}
 
+  '@types/prompts@2.4.9':
+    resolution: {integrity: sha512-qTxFi6Buiu8+50/+3DGIWLHM6QuWsEKugJnnP6iv2Mc4ncxE4A/OJkjuVOA+5X0X1S/nq5VJRa8Lu+nwcvbrKA==}
+
   '@types/retry@0.12.2':
     resolution: {integrity: sha512-XISRgDJ2Tc5q4TRqvgJtzsRkFYNJzZrhTdtMoGVBttwzzQJkPnS3WWTFc7kuDRoPtPakl+T+OfdEUjYJj7Jbow==}
 
@@ -1804,6 +1835,10 @@ packages:
 
   kleur@3.0.3:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
+    engines: {node: '>=6'}
+
+  kleur@4.1.5:
+    resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
 
   lilconfig@3.1.3:
@@ -3523,6 +3558,11 @@ snapshots:
     dependencies:
       undici-types: 7.16.0
 
+  '@types/prompts@2.4.9':
+    dependencies:
+      '@types/node': 22.19.17
+      kleur: 3.0.3
+
   '@types/retry@0.12.2': {}
 
   '@types/sax@1.2.7':
@@ -4318,6 +4358,8 @@ snapshots:
       argparse: 2.0.1
 
   kleur@3.0.3: {}
+
+  kleur@4.1.5: {}
 
   lilconfig@3.1.3: {}
 

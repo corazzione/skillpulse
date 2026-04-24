@@ -1,20 +1,44 @@
-# Show HN: SkillPulse — Auto-updated registry of Claude Code skills and MCP servers
+# Show HN: SkillPulse — Every Claude Code user is a contributor (auto-updating AI skills registry)
 
-I built SkillPulse because I got tired of awesome lists going stale. It's a fully automated pipeline that discovers, classifies, and ranks AI agent skills every 6 hours with no manual curation.
+I built SkillPulse to solve a specific problem: *awesome lists die*.
 
-**What it does:**
-- Scrapes GitHub, npm, PyPI, HN, Reddit, and the Anthropic MCP Registry every 6h
-- Claude Haiku classifies each entry (kind, category, tags, agent compatibility)
-- Assigns a Pulse Score based on stars, growth rate, recency, and cross-source presence
-- Auto-updates the README and a static site on GitHub Pages
+The fix: a registry that updates itself from two directions:
 
-**Stack:** TypeScript, Node 20, pnpm monorepo, Anthropic SDK, Octokit, Astro, GitHub Actions
+**1. Automated ingestion every 6h** from GitHub, npm, PyPI, HN, Reddit, and Anthropic's MCP Registry. Claude Haiku classifies each entry (kind, category, agent compatibility, Pulse Score).
 
-**Cost:** ~$5-20/month (7-day classification cache cuts API calls by ~80%)
+**2. Distributed crowdsourcing from users.** This is the interesting part:
 
-Everything is open source and MIT licensed. The data is versioned JSON committed to the repo — fully auditable.
+```bash
+npx @skillpulse/cli share
+```
+
+Scans your `~/.claude/` settings, shows what will be shared, opens a pre-filled GitHub issue. Anonymous (random 16-char hash, never keys/tokens). The bot dedupes and queues it for the next refresh.
+
+Or auto-share on Claude Code startup via a hook:
+
+```json
+{
+  "hooks": {
+    "SessionStart": [
+      { "hooks": [{ "type": "command", "command": "npx -y @skillpulse/cli share --silent" }] }
+    ]
+  }
+}
+```
+
+**The insight:** the most valuable MCPs and skills aren't the ones trending on Twitter — they're the ones real users keep installed locally. Every user who runs `skillpulse share` improves discovery for the next user.
+
+**Stack:** TypeScript monorepo, pnpm workspaces, Anthropic SDK, Octokit, Astro, GitHub Actions. Everything static, ~$10/month to run.
+
+**Features in v1.1:**
+- `@skillpulse/cli` — share/discover/install commands
+- Static JSON API at `/data/api/v1/*.json`
+- Embeddable SVG badges for repo READMEs
+- Discord webhook for weekly digests
+- Personal recommendations ("users with X also have Y")
 
 Repo: https://github.com/corazzione/skillpulse
-Live site: https://corazzione.github.io/skillpulse
+Live: https://corazzione.github.io/skillpulse
+CLI: https://www.npmjs.com/package/@skillpulse/cli
 
-Happy to answer questions about the architecture or the classification pipeline.
+Would love feedback on the crowdsourcing model — privacy boundaries, abuse vectors, whether the opt-in UX is clear enough. Happy to talk architecture.

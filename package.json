@@ -19,7 +19,9 @@
     "build:all": "tsx scripts/build-everything.ts",
     "check-budget": "tsx scripts/check-budget.ts",
     "write-health": "tsx scripts/write-health.ts",
-    "digest": "tsx scripts/generate-digest.ts"
+    "digest": "tsx scripts/generate-digest.ts",
+    "build:api": "tsx scripts/build-api.ts",
+    "build:badges": "tsx scripts/build-badges.ts"
   },
   "pnpm": {
     "onlyBuiltDependencies": ["@biomejs/biome", "esbuild"]

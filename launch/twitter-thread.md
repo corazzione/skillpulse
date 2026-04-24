@@ -1,63 +1,74 @@
-# Twitter/X Launch Thread
+# Twitter/X Thread — v1.1 launch
 
-**Tweet 1:**
-Awesome lists die. They're maintained by humans who eventually move on.
+**T1:**
+Awesome lists die when maintainers move on.
 
-I built SkillPulse — an auto-updating registry of Claude Code skills, MCP servers, and AI agent tools.
+SkillPulse is a registry that *can't* die — because every user is a passive contributor.
 
-Refreshed every 6h. No curator bottleneck.
+```
+npx @skillpulse/cli share
+```
 
-**Tweet 2:**
-It scrapes 7 sources automatically:
-- GitHub (topics: claude-code, mcp-server, agent-skill)
-- npm (keywords: claude-skill, mcp-server)
-- PyPI
-- Anthropic's official MCP Registry
-- Hacker News (last 7 days)
-- Reddit (r/ClaudeAI, r/LocalLLaMA, r/mcp)
+One command → you just added your entire MCP stack to the registry. 🧵
 
-**Tweet 3:**
+**T2:**
+The registry updates from two sources:
+
+🤖 Automated: scrapes GitHub, npm, PyPI, HN, Reddit, Anthropic's MCP Registry every 6h
+👥 Community: every Claude Code user (opt-in) shares their local MCPs + skills anonymously
+
+No curator. No single point of failure.
+
+**T3:**
+Privacy by design:
+✓ Anonymous (random 16-char hash, not your identity)
+✓ Names + public URLs only
+✗ Never API keys, tokens, or file contents
+✗ No network call until you consent once
+
+First run = explicit consent prompt.
+Opt out: `rm -rf ~/.skillpulse`
+
+**T4:**
+Claude Code hook auto-shares on session start (throttled 24h):
+
+```json
+{
+  "hooks": {
+    "SessionStart": [
+      { "hooks": [{ "type": "command", "command": "npx -y @skillpulse/cli share --silent" }] }
+    ]
+  }
+}
+```
+
+Now your tool stack helps every other Claude Code user.
+
+**T5:**
 Claude Haiku classifies each entry:
-→ Kind (skill / MCP server / plugin / prompt pack / CLI)
-→ Category (22 canonical options)
-→ Agent compatibility (Claude Code / Cursor / Codex / Gemini / Windsurf)
-→ Confidence score
+→ Kind (skill/MCP/plugin/prompt/CLI)
+→ Category (22 canonical)
+→ Agent compat (Claude Code/Cursor/Codex/Gemini/Windsurf)
+→ Confidence → escalates to Sonnet if <0.7
 
-Low-confidence? Escalates to Sonnet automatically.
+Pulse Score: stars + growth + recency + cross-source + confidence
 
-**Tweet 4:**
-Each entry gets a Pulse Score (0–100):
-- 30% stars (log scale)
-- 25% growth rate (week-over-week)
-- 20% recency boost
-- 15% cross-source bonus
-- 10% AI confidence
+**T6:**
+Stack:
+• TypeScript monorepo (pnpm)
+• Anthropic SDK + Octokit
+• Astro static site → GitHub Pages
+• GitHub Actions (6h refresh)
+• Biome, Vitest, 30+ tests
 
-Trend: new / rising / stable / declining
+Cost: ~$10/month. Free for public repos + Pages.
+MIT licensed. Fork for your niche.
 
-**Tweet 5:**
-Submit a skill via GitHub issue → bot validates the URL → queues it → next 6h run classifies it → issue auto-closes.
+**T7:**
+⭐ https://github.com/corazzione/skillpulse
+🌐 https://corazzione.github.io/skillpulse
+📦 https://www.npmjs.com/package/@skillpulse/cli
 
-Zero manual review needed.
+Would love your feedback. Drop your stack with `skillpulse share` to help kick-start it 🙏
 
-**Tweet 6:**
-Stack: TypeScript, pnpm monorepo, Anthropic SDK, Octokit, Astro, GitHub Actions.
-
-Cost: ~$10/month (7-day classification cache cuts API calls by 80%).
-
-MIT licensed. Fork it for your niche.
-
-https://github.com/corazzione/skillpulse
-https://corazzione.github.io/skillpulse
-
-**Tweet 7 (if trending):**
-Wow this blew up. A few things people asked about:
-
-Q: Why not [existing list]?
-A: Lists die. This doesn't.
-
-Q: How accurate is the AI?
-A: >90% on well-documented packages. All outputs zod-validated.
-
-Q: Can I fork it?
-A: Yes, MIT license, that's the point.
+— MC. ■

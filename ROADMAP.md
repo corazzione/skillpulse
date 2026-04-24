@@ -12,6 +12,7 @@
 | ETAPA 4 | Gerador de README e site estático | ✅ Concluído | v0.4.0 |
 | ETAPA 5 | GitHub Actions e bot de issues | ✅ Concluído | v0.5.0 |
 | ETAPA 6 | Launch, SEO e distribuição | ✅ Concluído | v1.0.0 |
+| ETAPA 7 | Growth & Distribution (CLI, hooks, API, badges) | ✅ Concluído | v1.1.0 |
 
 ## O que foi criado na ETAPA 1
 
@@ -111,6 +112,45 @@
 
 ### README
 - Polished for public launch: hero banner, badges, clear CTAs, methodology links
+
+## ETAPA 7 — Growth & Distribution (v1.1.0)
+
+The "growth layer" that turns every Claude Code user into a passive contributor.
+
+### `@skillpulse/cli` (`packages/cli/`)
+- `skillpulse share` — interactive scan of `~/.claude/` (MCPs via settings.json, skills via SKILL.md, plugins) with first-run consent flow and anonymous user hash
+- `skillpulse share --silent` — hook-friendly; queues payload locally, throttled 24h, no prompts
+- `skillpulse discover [--top N --category X --json]` — fetches `data/snapshots/latest.json` and prints top-ranked entries
+- `skillpulse install <name>` — resolves npm/github source and installs
+- Privacy-first: 16-char sha256 user id, names + public URLs only, never keys/tokens
+- Opt-out: `rm -rf ~/.skillpulse`
+
+### Claude Code hook integration
+- Documented one-line addition to `~/.claude/settings.json` that auto-shares on SessionStart
+- `docs/SHARE-YOUR-SETUP.md` — privacy policy + setup
+
+### Static JSON API (`data/api/v1/`)
+- `all.json`, `trending.json`, `new.json`, `stats.json`
+- `by-category/{cat}.json`, `by-agent/{agent}.json`
+- Built by `scripts/build-api.ts`, wired into refresh.yml
+
+### Embeddable SVG badges (`data/api/v1/badges/*.svg`)
+- Per-entry pulse badge + overall entries badge
+- Built by `scripts/build-badges.ts`, wired into refresh.yml
+
+### Bot telemetry handler
+- `packages/bot/src/handlers/on-issue-opened.ts` parses issues with label `telemetry:anonymous`, extracts embedded JSON, appends URLs to pending-submissions, auto-closes
+
+### Discord webhook
+- Weekly digest posts to `DISCORD_WEBHOOK_URL` (optional secret) with top-3 new entries
+
+### Recommendation engine (`packages/generator/src/recommend.ts`)
+- `recommendSimilar(snapshot, entry, n)` — category/tags/compat/kind similarity
+- `recommendForUser(snapshot, userHas, n)` — boosts by shared category/tags
+
+### Launch materials updated
+- `launch/HN-post.md`, `launch/twitter-thread.md`, `launch/reddit-posts.md` re-angled around "every user is a contributor"
+- `launch/README.md` — asset index
 
 ## Post-Launch Ideas
 

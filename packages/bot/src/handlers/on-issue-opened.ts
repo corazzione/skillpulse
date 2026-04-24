@@ -66,6 +66,35 @@ export async function onIssueOpened(octokit: Octokit, payload: IssueOpenedPayloa
 
   logger.info({ msg: 'Issue opened', number: issueNumber, title: issue.title });
 
+  // Handle telemetry issues from @skillpulse/cli
+  if (issue.labels.some((l) => l.name === 'telemetry:anonymous')) {
+    const jsonMatch = body.match(/```json\n([\s\S]+?)\n```/);
+    if (jsonMatch?.[1]) {
+      try {
+        const telemetry = JSON.parse(jsonMatch[1]) as {
+          userId: string;
+          skills: Array<{ name: string; kind: string; url?: string; description?: string }>;
+        };
+        // Add any new URLs to pending-submissions
+        for (const skill of telemetry.skills) {
+          if (skill.url?.startsWith('http')) {
+            await appendToJsonArray(PENDING_PATH, skill.url);
+          }
+        }
+        await octokit.issues.createComment({
+          owner,
+          repo,
+          issue_number: issueNumber,
+          body: `🙏 Thank you for contributing! ${telemetry.skills.length} items queued for classification. This issue will be closed automatically.`,
+        });
+        await octokit.issues.update({ owner, repo, issue_number: issueNumber, state: 'closed' });
+        return;
+      } catch (err) {
+        logger.warn({ msg: 'Failed to parse telemetry', error: String(err) });
+      }
+    }
+  }
+
   if (isSubmitSkillIssue(issue)) {
     const url = extractUrlFromBody(body);
 

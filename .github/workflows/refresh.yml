@@ -49,6 +49,12 @@ jobs:
       - name: Build README and site
         run: pnpm tsx scripts/build-everything.ts
 
+      - name: Build JSON API
+        run: pnpm tsx scripts/build-api.ts
+
+      - name: Build badges
+        run: pnpm tsx scripts/build-badges.ts
+
       - name: Write health file
         run: pnpm tsx scripts/write-health.ts
 

@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-04-24
+
+### Added — Growth Layer
+- **`@skillpulse/cli`** npm package: `share`, `discover`, `install` commands
+- **Distributed contribution**: Claude Code users can share local MCPs/skills anonymously via `npx @skillpulse/cli share`
+- **Claude Code hook**: one-line addition to `~/.claude/settings.json` enables silent auto-share on session start (throttled 24h, consent required first run)
+- **Telemetry issue handler**: bot parses `telemetry:anonymous` issues from the CLI and queues URLs for classification
+- **Static JSON API** at `data/api/v1/`: `all.json`, `trending.json`, `new.json`, `by-category/{cat}.json`, `by-agent/{agent}.json`, `stats.json`
+- **Embeddable SVG badges** for repo READMEs (`data/api/v1/badges/*.svg`)
+- **Recommendation engine**: `recommendSimilar()` and `recommendForUser()` helpers
+- **Discord webhook** for weekly digest (optional via `DISCORD_WEBHOOK_URL` secret)
+- **docs/SHARE-YOUR-SETUP.md** privacy policy and setup guide
+- **Updated launch materials** with the "every user is a contributor" angle
+- scripts/build-api.ts and scripts/build-badges.ts integrated into refresh workflow
+
 ## [1.0.0] - 2026-04-24
 
 ### Added

@@ -20,6 +20,18 @@
 
 ---
 
+## 🌱 Grow the Registry (New in v1.1)
+
+**Every Claude Code user can now contribute automatically.**
+
+```bash
+npx @skillpulse/cli share
+```
+
+Scans your `~/.claude/` MCPs and skills, shares them anonymously, makes the registry better for everyone. [Privacy policy](docs/SHARE-YOUR-SETUP.md).
+
+---
+
 ## Why SkillPulse?
 
 Awesome lists die. They're manually curated, which means they go stale the moment the maintainer loses interest.

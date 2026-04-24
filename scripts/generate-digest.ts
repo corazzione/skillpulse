@@ -49,6 +49,31 @@ ${top5Rising.map((e, i) => `${i + 1}. **[${e.name}](${e.sourceUrl})** — Pulse 
   await mkdir(digestDir, { recursive: true });
   await writeFile(join(digestDir, `${week}.md`), digest);
   console.log(JSON.stringify({ level: 'info', msg: 'Digest written', week }));
+
+  // Post to Discord if webhook configured
+  const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+  if (webhookUrl && top10New.length > 0) {
+    try {
+      const content = `📊 **SkillPulse Weekly Digest — ${week}**\n\n🆕 **New This Week (Top 3):**\n${top10New
+        .slice(0, 3)
+        .map((e) => `• [${e.name}](<${e.sourceUrl}>) — ${e.description.slice(0, 80)}`)
+        .join(
+          '\n',
+        )}\n\n[Full digest](<https://github.com/corazzione/skillpulse/blob/main/digests/${week}.md>)`;
+      await fetch(webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          content,
+          username: 'SkillPulse',
+          avatar_url:
+            'https://raw.githubusercontent.com/corazzione/skillpulse/main/.github/assets/logo.svg',
+        }),
+      });
+    } catch (err) {
+      console.error('Discord webhook failed:', String(err));
+    }
+  }
 }
 
 main().catch((err) => {
