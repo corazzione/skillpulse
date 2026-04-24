@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-04-24
+
+### Added
+- Data ingestor package (`@skillpulse/ingestors`)
+- 7 ingestors: GitHub Trending, npm, PyPI, Anthropic Registry, Tokrepo, HN, Reddit
+- Orchestrator with parallel execution and URL deduplication
+- Shared utilities: `fetchWithRetry` (p-retry, AbortController 30s), `dedupeByUrl`
+- Unit tests for utils and orchestrator
+- Integration script `scripts/run-ingestors.ts`
+
 ## [0.1.0] - 2026-04-24
 
 ### Added

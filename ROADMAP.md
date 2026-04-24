@@ -7,7 +7,7 @@
 | Etapa | Descrição | Status | Commit |
 |-------|-----------|--------|--------|
 | ETAPA 1 | Fundação, arquitetura e esqueleto | Concluído | v0.1.0 |
-| ETAPA 2 | Ingestores (scrapers) | Pendente | — |
+| ETAPA 2 | Ingestores (scrapers) | ✅ Concluído | v0.2.0 |
 | ETAPA 3 | Classificador de IA e scoring | Pendente | — |
 | ETAPA 4 | Gerador de README e site estático | Pendente | — |
 | ETAPA 5 | GitHub Actions e bot de issues | Pendente | — |
@@ -37,14 +37,19 @@
 - `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`, `SECURITY.md`
 - `README.md` — placeholder com branding MC.
 
-## Para continuar (ETAPA 2)
+## Para continuar (ETAPA 3)
 
 O próximo agente deve:
-1. Ler `skillpulse-claude-code-plan.md` (seção ETAPA 2)
+1. Ler `skillpulse-claude-code-plan.md` (seção ETAPA 3)
 2. Estar na pasta `E:/skillpulse/`
-3. Ter `GITHUB_TOKEN` e `ANTHROPIC_API_KEY` disponíveis
-4. Instalar deps em `packages/ingestors/`: `@octokit/rest`, `@octokit/graphql`, `undici`, `p-retry`, `p-queue`
-5. Implementar os 7 ingestores + orquestrador
+3. Ter `ANTHROPIC_API_KEY` e `GITHUB_TOKEN` disponíveis
+4. Implementar o classificador em `packages/classifier/`:
+   - Usar Claude haiku-4-5 para classificar `RawSkillResult` em `SkillEntry`
+   - Detectar `kind` (mcp-server, skill, plugin, prompt-pack, cli-tool)
+   - Detectar `compat` (claude-code, cursor, codex-cli, etc.)
+   - Calcular `pulseScore` e `trend`
+5. Integrar classificador com dados de `data/raw/*.json`
+6. Gerar `data/classified/*.json` com `DataSnapshot`
 
 ## Stack
 
