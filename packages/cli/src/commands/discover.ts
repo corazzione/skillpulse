@@ -12,10 +12,11 @@ interface Entry {
   pulseScore: number;
   trend: string;
   category: string;
+  compat?: string[];
 }
 
 export async function discover(
-  opts: { top?: number; category?: string; json?: boolean } = {},
+  opts: { top?: number; category?: string; agent?: string; json?: boolean } = {},
 ): Promise<void> {
   const top = opts.top ?? 20;
   const res = await fetch(DATA_URL);
@@ -29,12 +30,19 @@ export async function discover(
   if (opts.category) {
     entries = entries.filter((e) => e.category === opts.category);
   }
+  if (opts.agent) {
+    const agent = opts.agent.toLowerCase();
+    entries = entries.filter((e) => e.compat?.some((c) => c.toLowerCase() === agent));
+  }
   entries = entries.sort((a, b) => b.pulseScore - a.pulseScore).slice(0, top);
 
   if (opts.json) {
     console.log(JSON.stringify(entries, null, 2));
     return;
   }
+
+  const agentLabel = opts.agent ? ` for ${opts.agent}` : '';
+  const catLabel = opts.category ? ` in ${opts.category}` : '';
 
   const kindEmoji: Record<string, string> = {
     skill: '🧠',
@@ -50,11 +58,7 @@ export async function discover(
     declining: '📉',
   };
 
-  console.log(
-    kleur
-      .bold()
-      .yellow(`\n  SkillPulse — Top ${top}${opts.category ? ` in ${opts.category}` : ''}\n`),
-  );
+  console.log(kleur.bold().yellow(`\n  SkillPulse — Top ${top}${catLabel}${agentLabel}\n`));
   for (const [i, e] of entries.entries()) {
     const rank = String(i + 1).padStart(2, ' ');
     const pulse = kleur.yellow(`${e.pulseScore}/100`);
