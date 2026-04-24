@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022"],
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@skillpulse/core": ["./packages/core/src/index.ts"],
+      "@skillpulse/ingestors": ["./packages/ingestors/src/index.ts"],
+      "@skillpulse/classifier": ["./packages/classifier/src/index.ts"],
+      "@skillpulse/generator": ["./packages/generator/src/index.ts"],
+      "@skillpulse/bot": ["./packages/bot/src/index.ts"]
+    }
+  }
+}

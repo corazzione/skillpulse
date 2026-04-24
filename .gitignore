@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env*
+!.env.example
+*.log
+.astro/
+.DS_Store
+data/raw/
+data/cache/
+data/logs/
+site/dist/

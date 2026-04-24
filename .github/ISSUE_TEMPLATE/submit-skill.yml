@@ -1,0 +1,40 @@
+name: Submit a Skill or MCP
+description: Add a new skill, MCP server, plugin, or prompt pack to the registry
+title: "[SKILL] "
+labels: ["submission:queued"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: Name of the skill/MCP/plugin
+      placeholder: my-awesome-mcp
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: GitHub repo, npm package, or PyPI package URL
+      placeholder: https://github.com/user/repo
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - skill
+        - mcp-server
+        - plugin
+        - prompt-pack
+        - cli-tool
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why should this be included?
+      description: Brief explanation of why this is useful for the community
+    validations:
+      required: true

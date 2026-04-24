@@ -1,0 +1,17 @@
+name: Report Stale Entry
+description: Report a dead link or outdated entry in the registry
+title: "[STALE] "
+labels: ["stale:reported"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Entry URL
+      description: The URL of the entry that appears stale
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What makes you think this entry is stale?
