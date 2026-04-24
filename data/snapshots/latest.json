@@ -12,19 +12,9 @@
       "author": "modelcontextprotocol",
       "stars": 18500,
       "downloadsWeekly": 420000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "filesystem",
-      "tags": [
-        "official",
-        "filesystem",
-        "files",
-        "io"
-      ],
+      "tags": ["official", "filesystem", "files", "io"],
       "firstSeenAt": "2025-10-26T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 98,
@@ -40,19 +30,9 @@
       "author": "modelcontextprotocol",
       "stars": 18500,
       "downloadsWeekly": 380000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "version-control",
-      "tags": [
-        "official",
-        "github",
-        "git",
-        "code-review"
-      ],
+      "tags": ["official", "github", "git", "code-review"],
       "firstSeenAt": "2025-10-26T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 96,
@@ -68,19 +48,9 @@
       "author": "modelcontextprotocol",
       "stars": 18500,
       "downloadsWeekly": 210000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "database",
-      "tags": [
-        "official",
-        "postgres",
-        "sql",
-        "database"
-      ],
+      "tags": ["official", "postgres", "sql", "database"],
       "firstSeenAt": "2025-10-26T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 92,
@@ -96,19 +66,9 @@
       "author": "modelcontextprotocol",
       "stars": 18500,
       "downloadsWeekly": 145000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "database",
-      "tags": [
-        "official",
-        "sqlite",
-        "sql",
-        "database"
-      ],
+      "tags": ["official", "sqlite", "sql", "database"],
       "firstSeenAt": "2025-10-26T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 88,
@@ -124,19 +84,9 @@
       "author": "modelcontextprotocol",
       "stars": 18500,
       "downloadsWeekly": 175000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "web-search",
-      "tags": [
-        "official",
-        "search",
-        "web",
-        "brave"
-      ],
+      "tags": ["official", "search", "web", "brave"],
       "firstSeenAt": "2025-10-26T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 90,
@@ -152,19 +102,9 @@
       "author": "modelcontextprotocol",
       "stars": 18500,
       "downloadsWeekly": 260000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "web-browsing",
-      "tags": [
-        "official",
-        "fetch",
-        "http",
-        "scraping"
-      ],
+      "tags": ["official", "fetch", "http", "scraping"],
       "firstSeenAt": "2025-10-26T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 91,
@@ -180,19 +120,9 @@
       "author": "modelcontextprotocol",
       "stars": 18500,
       "downloadsWeekly": 130000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "memory",
-      "tags": [
-        "official",
-        "memory",
-        "knowledge-graph",
-        "persistence"
-      ],
+      "tags": ["official", "memory", "knowledge-graph", "persistence"],
       "firstSeenAt": "2025-10-26T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 86,
@@ -208,19 +138,9 @@
       "author": "modelcontextprotocol",
       "stars": 18500,
       "downloadsWeekly": 95000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "browser-automation",
-      "tags": [
-        "official",
-        "puppeteer",
-        "browser",
-        "e2e"
-      ],
+      "tags": ["official", "puppeteer", "browser", "e2e"],
       "firstSeenAt": "2025-10-26T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 84,
@@ -236,18 +156,9 @@
       "author": "modelcontextprotocol",
       "stars": 18500,
       "downloadsWeekly": 72000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "communication",
-      "tags": [
-        "official",
-        "slack",
-        "messaging"
-      ],
+      "tags": ["official", "slack", "messaging"],
       "firstSeenAt": "2025-10-26T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 80,
@@ -263,18 +174,9 @@
       "author": "modelcontextprotocol",
       "stars": 18500,
       "downloadsWeekly": 54000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "cloud-storage",
-      "tags": [
-        "official",
-        "google-drive",
-        "storage"
-      ],
+      "tags": ["official", "google-drive", "storage"],
       "firstSeenAt": "2025-10-26T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 78,
@@ -290,19 +192,9 @@
       "author": "jlowin",
       "stars": 11200,
       "downloadsWeekly": 95000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "frameworks",
-      "tags": [
-        "framework",
-        "python",
-        "sdk",
-        "builder"
-      ],
+      "tags": ["framework", "python", "sdk", "builder"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 94,
@@ -318,18 +210,9 @@
       "author": "GLips",
       "stars": 9100,
       "downloadsWeekly": 47000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "design",
-      "tags": [
-        "figma",
-        "design",
-        "ui"
-      ],
+      "tags": ["figma", "design", "ui"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 93,
@@ -345,19 +228,9 @@
       "author": "microsoft",
       "stars": 13400,
       "downloadsWeekly": 180000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "browser-automation",
-      "tags": [
-        "playwright",
-        "browser",
-        "e2e",
-        "official"
-      ],
+      "tags": ["playwright", "browser", "e2e", "official"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 97,
@@ -373,19 +246,9 @@
       "author": "upstash",
       "stars": 22000,
       "downloadsWeekly": 310000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "documentation",
-      "tags": [
-        "docs",
-        "context",
-        "hot",
-        "anti-hallucination"
-      ],
+      "tags": ["docs", "context", "hot", "anti-hallucination"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 99,
@@ -401,18 +264,9 @@
       "author": "exa-labs",
       "stars": 2400,
       "downloadsWeekly": 38000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "web-search",
-      "tags": [
-        "search",
-        "semantic",
-        "exa"
-      ],
+      "tags": ["search", "semantic", "exa"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 82,
@@ -428,18 +282,9 @@
       "author": "supabase-community",
       "stars": 3800,
       "downloadsWeekly": 62000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "database",
-      "tags": [
-        "supabase",
-        "postgres",
-        "baas"
-      ],
+      "tags": ["supabase", "postgres", "baas"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 85,
@@ -455,18 +300,9 @@
       "author": "cloudflare",
       "stars": 2900,
       "downloadsWeekly": 41000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "cloud-infra",
-      "tags": [
-        "cloudflare",
-        "workers",
-        "edge"
-      ],
+      "tags": ["cloudflare", "workers", "edge"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 81,
@@ -482,18 +318,9 @@
       "author": "getsentry",
       "stars": 1600,
       "downloadsWeekly": 27000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "observability",
-      "tags": [
-        "sentry",
-        "monitoring",
-        "errors"
-      ],
+      "tags": ["sentry", "monitoring", "errors"],
       "firstSeenAt": "2026-04-17T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 76,
@@ -509,18 +336,9 @@
       "author": "stripe",
       "stars": 2100,
       "downloadsWeekly": 34000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "payments",
-      "tags": [
-        "stripe",
-        "payments",
-        "billing"
-      ],
+      "tags": ["stripe", "payments", "billing"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 83,
@@ -536,18 +354,9 @@
       "author": "sooperset",
       "stars": 2300,
       "downloadsWeekly": 21000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "project-management",
-      "tags": [
-        "jira",
-        "confluence",
-        "atlassian"
-      ],
+      "tags": ["jira", "confluence", "atlassian"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 77,
@@ -563,18 +372,9 @@
       "author": "zcaceres",
       "stars": 1200,
       "downloadsWeekly": 19000,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "windsurf",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "windsurf", "generic"],
       "category": "web-browsing",
-      "tags": [
-        "fetch",
-        "http",
-        "scraping"
-      ],
+      "tags": ["fetch", "http", "scraping"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 72,
@@ -590,17 +390,9 @@
       "author": "bnb-chain",
       "stars": 580,
       "downloadsWeekly": 4200,
-      "compat": [
-        "claude-code",
-        "cursor",
-        "generic"
-      ],
+      "compat": ["claude-code", "cursor", "generic"],
       "category": "blockchain",
-      "tags": [
-        "bnb",
-        "blockchain",
-        "web3"
-      ],
+      "tags": ["bnb", "blockchain", "web3"],
       "firstSeenAt": "2026-04-17T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 58,
@@ -615,16 +407,9 @@
       "sourceUrl": "https://github.com/anthropics/anthropic-cookbook",
       "author": "anthropics",
       "stars": 14200,
-      "compat": [
-        "claude-code"
-      ],
+      "compat": ["claude-code"],
       "category": "code-quality",
-      "tags": [
-        "review",
-        "quality",
-        "solid",
-        "official"
-      ],
+      "tags": ["review", "quality", "solid", "official"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 89,
@@ -639,15 +424,9 @@
       "sourceUrl": "https://github.com/wshobson/commands",
       "author": "wshobson",
       "stars": 3400,
-      "compat": [
-        "claude-code"
-      ],
+      "compat": ["claude-code"],
       "category": "productivity",
-      "tags": [
-        "commands",
-        "prompts",
-        "workflow"
-      ],
+      "tags": ["commands", "prompts", "workflow"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 87,
@@ -662,15 +441,9 @@
       "sourceUrl": "https://github.com/wshobson/agents",
       "author": "wshobson",
       "stars": 5800,
-      "compat": [
-        "claude-code"
-      ],
+      "compat": ["claude-code"],
       "category": "agents",
-      "tags": [
-        "subagents",
-        "specialists",
-        "workflow"
-      ],
+      "tags": ["subagents", "specialists", "workflow"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 90,
@@ -685,15 +458,9 @@
       "sourceUrl": "https://github.com/hesreallyhim/awesome-claude-code",
       "author": "hesreallyhim",
       "stars": 4100,
-      "compat": [
-        "claude-code"
-      ],
+      "compat": ["claude-code"],
       "category": "meta",
-      "tags": [
-        "awesome-list",
-        "directory",
-        "discovery"
-      ],
+      "tags": ["awesome-list", "directory", "discovery"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 86,
@@ -708,15 +475,9 @@
       "sourceUrl": "https://github.com/pchalasani/claude-code-tools",
       "author": "pchalasani",
       "stars": 920,
-      "compat": [
-        "claude-code"
-      ],
+      "compat": ["claude-code"],
       "category": "productivity",
-      "tags": [
-        "tools",
-        "git",
-        "testing"
-      ],
+      "tags": ["tools", "git", "testing"],
       "firstSeenAt": "2026-04-17T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 71,
@@ -732,16 +493,9 @@
       "author": "BeehiveInnovations",
       "stars": 6700,
       "downloadsWeekly": 48000,
-      "compat": [
-        "claude-code",
-        "cursor"
-      ],
+      "compat": ["claude-code", "cursor"],
       "category": "agents",
-      "tags": [
-        "multi-model",
-        "orchestration",
-        "consensus"
-      ],
+      "tags": ["multi-model", "orchestration", "consensus"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 92,
@@ -756,15 +510,9 @@
       "sourceUrl": "https://github.com/PatrickJS/awesome-cursorrules",
       "author": "PatrickJS",
       "stars": 31000,
-      "compat": [
-        "cursor"
-      ],
+      "compat": ["cursor"],
       "category": "meta",
-      "tags": [
-        "cursorrules",
-        "awesome-list",
-        "directory"
-      ],
+      "tags": ["cursorrules", "awesome-list", "directory"],
       "firstSeenAt": "2025-10-26T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 95,
@@ -780,15 +528,9 @@
       "author": "anthropics",
       "stars": 29000,
       "downloadsWeekly": 850000,
-      "compat": [
-        "claude-code"
-      ],
+      "compat": ["claude-code"],
       "category": "agents",
-      "tags": [
-        "official",
-        "cli",
-        "claude"
-      ],
+      "tags": ["official", "cli", "claude"],
       "firstSeenAt": "2025-10-26T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 100,
@@ -804,16 +546,9 @@
       "author": "openai",
       "stars": 19400,
       "downloadsWeekly": 340000,
-      "compat": [
-        "codex-cli"
-      ],
+      "compat": ["codex-cli"],
       "category": "agents",
-      "tags": [
-        "official",
-        "cli",
-        "codex",
-        "openai"
-      ],
+      "tags": ["official", "cli", "codex", "openai"],
       "firstSeenAt": "2025-10-26T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 94,
@@ -829,16 +564,9 @@
       "author": "google-gemini",
       "stars": 15200,
       "downloadsWeekly": 240000,
-      "compat": [
-        "gemini-cli"
-      ],
+      "compat": ["gemini-cli"],
       "category": "agents",
-      "tags": [
-        "official",
-        "cli",
-        "gemini",
-        "google"
-      ],
+      "tags": ["official", "cli", "gemini", "google"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 91,
@@ -853,16 +581,9 @@
       "sourceUrl": "https://github.com/block/goose",
       "author": "block",
       "stars": 8300,
-      "compat": [
-        "generic"
-      ],
+      "compat": ["generic"],
       "category": "agents",
-      "tags": [
-        "agent",
-        "cli",
-        "mcp",
-        "local"
-      ],
+      "tags": ["agent", "cli", "mcp", "local"],
       "firstSeenAt": "2026-03-25T05:09:54.483Z",
       "lastUpdatedAt": "2026-04-24T05:09:54.482Z",
       "pulseScore": 84,
