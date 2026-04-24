@@ -12,7 +12,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:modelcontextprotocol/servers/filesystem',
     name: '@modelcontextprotocol/server-filesystem',
-    description: 'Secure filesystem access for MCP — read, write, search files with configurable permissions.',
+    description:
+      'Secure filesystem access for MCP — read, write, search files with configurable permissions.',
     kind: 'mcp-server',
     source: 'github',
     sourceUrl: 'https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem',
@@ -30,7 +31,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:modelcontextprotocol/servers/github',
     name: '@modelcontextprotocol/server-github',
-    description: 'Official MCP server for GitHub — manage repos, issues, PRs, search code, and more via the GitHub API.',
+    description:
+      'Official MCP server for GitHub — manage repos, issues, PRs, search code, and more via the GitHub API.',
     kind: 'mcp-server',
     source: 'github',
     sourceUrl: 'https://github.com/modelcontextprotocol/servers/tree/main/src/github',
@@ -48,7 +50,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:modelcontextprotocol/servers/postgres',
     name: '@modelcontextprotocol/server-postgres',
-    description: 'Read-only Postgres access for LLMs — query schemas and data with safe, parameterized SQL.',
+    description:
+      'Read-only Postgres access for LLMs — query schemas and data with safe, parameterized SQL.',
     kind: 'mcp-server',
     source: 'github',
     sourceUrl: 'https://github.com/modelcontextprotocol/servers/tree/main/src/postgres',
@@ -66,7 +69,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:modelcontextprotocol/servers/sqlite',
     name: '@modelcontextprotocol/server-sqlite',
-    description: 'SQLite MCP server with query, schema inspection, and business-insights memo tooling.',
+    description:
+      'SQLite MCP server with query, schema inspection, and business-insights memo tooling.',
     kind: 'mcp-server',
     source: 'github',
     sourceUrl: 'https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite',
@@ -120,7 +124,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:modelcontextprotocol/servers/memory',
     name: '@modelcontextprotocol/server-memory',
-    description: 'Persistent knowledge-graph memory — entities, relations, and observations across sessions.',
+    description:
+      'Persistent knowledge-graph memory — entities, relations, and observations across sessions.',
     kind: 'mcp-server',
     source: 'github',
     sourceUrl: 'https://github.com/modelcontextprotocol/servers/tree/main/src/memory',
@@ -194,7 +199,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:jlowin/fastmcp',
     name: 'fastmcp',
-    description: 'The fast, Pythonic way to build MCP servers and clients. Decorators, type hints, auto-schema.',
+    description:
+      'The fast, Pythonic way to build MCP servers and clients. Decorators, type hints, auto-schema.',
     kind: 'mcp-server',
     source: 'github',
     sourceUrl: 'https://github.com/jlowin/fastmcp',
@@ -212,7 +218,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:GLips/Figma-Context-MCP',
     name: 'figma-developer-mcp',
-    description: 'Give Cursor/Claude/any MCP client access to your Figma files — implement designs faithfully.',
+    description:
+      'Give Cursor/Claude/any MCP client access to your Figma files — implement designs faithfully.',
     kind: 'mcp-server',
     source: 'github',
     sourceUrl: 'https://github.com/GLips/Figma-Context-MCP',
@@ -230,7 +237,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:microsoft/playwright-mcp',
     name: '@playwright/mcp',
-    description: 'Official Playwright MCP server — drive browsers with accessibility-tree snapshots, no vision model needed.',
+    description:
+      'Official Playwright MCP server — drive browsers with accessibility-tree snapshots, no vision model needed.',
     kind: 'mcp-server',
     source: 'github',
     sourceUrl: 'https://github.com/microsoft/playwright-mcp',
@@ -248,7 +256,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:upstash/context7',
     name: '@upstash/context7-mcp',
-    description: 'Up-to-date, version-specific docs and code examples for any library — eliminates LLM hallucinations.',
+    description:
+      'Up-to-date, version-specific docs and code examples for any library — eliminates LLM hallucinations.',
     kind: 'mcp-server',
     source: 'github',
     sourceUrl: 'https://github.com/upstash/context7',
@@ -338,7 +347,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:stripe/agent-toolkit',
     name: '@stripe/mcp',
-    description: 'Stripe MCP server — create payments, subscriptions, customers with safe scoped API keys.',
+    description:
+      'Stripe MCP server — create payments, subscriptions, customers with safe scoped API keys.',
     kind: 'mcp-server',
     source: 'github',
     sourceUrl: 'https://github.com/stripe/agent-toolkit',
@@ -374,7 +384,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:zcaceres/fetch-mcp',
     name: 'fetch-mcp',
-    description: 'Fetch URLs (HTML/JSON/text/markdown) with schema-validated outputs — built-in retry + caching.',
+    description:
+      'Fetch URLs (HTML/JSON/text/markdown) with schema-validated outputs — built-in retry + caching.',
     kind: 'mcp-server',
     source: 'github',
     sourceUrl: 'https://github.com/zcaceres/fetch-mcp',
@@ -412,7 +423,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:anthropics/claude-cookbooks/code-review-skill',
     name: 'code-review',
-    description: 'Opinionated code review skill for Claude Code — checks SOLID, security, performance, style.',
+    description:
+      'Opinionated code review skill for Claude Code — checks SOLID, security, performance, style.',
     kind: 'skill',
     source: 'github',
     sourceUrl: 'https://github.com/anthropics/anthropic-cookbook',
@@ -429,7 +441,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:wshobson/commands',
     name: 'wshobson/commands',
-    description: 'Curated Claude Code slash commands — 50+ battle-tested prompts for real workflows.',
+    description:
+      'Curated Claude Code slash commands — 50+ battle-tested prompts for real workflows.',
     kind: 'prompt-pack',
     source: 'github',
     sourceUrl: 'https://github.com/wshobson/commands',
@@ -446,7 +459,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:wshobson/agents',
     name: 'wshobson/agents',
-    description: 'Specialized subagents for Claude Code — security, architecture, debugging, testing.',
+    description:
+      'Specialized subagents for Claude Code — security, architecture, debugging, testing.',
     kind: 'skill',
     source: 'github',
     sourceUrl: 'https://github.com/wshobson/agents',
@@ -463,7 +477,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:hesreallyhim/awesome-claude-code',
     name: 'awesome-claude-code',
-    description: 'Curated list of slash commands, CLAUDE.md files, CLI tools, and workflows for Claude Code.',
+    description:
+      'Curated list of slash commands, CLAUDE.md files, CLI tools, and workflows for Claude Code.',
     kind: 'prompt-pack',
     source: 'github',
     sourceUrl: 'https://github.com/hesreallyhim/awesome-claude-code',
@@ -480,7 +495,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:pchalasani/claude-code-tools',
     name: 'claude-code-tools',
-    description: 'Swiss-army toolbelt skill — git automation, test runners, lint/format bridges for Claude Code.',
+    description:
+      'Swiss-army toolbelt skill — git automation, test runners, lint/format bridges for Claude Code.',
     kind: 'skill',
     source: 'github',
     sourceUrl: 'https://github.com/pchalasani/claude-code-tools',
@@ -497,7 +513,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:BeehiveInnovations/zen-mcp-server',
     name: 'zen-mcp-server',
-    description: 'Multi-model orchestration (Gemini, o3, Claude) for Claude Code — debate, consensus, code review.',
+    description:
+      'Multi-model orchestration (Gemini, o3, Claude) for Claude Code — debate, consensus, code review.',
     kind: 'mcp-server',
     source: 'github',
     sourceUrl: 'https://github.com/BeehiveInnovations/zen-mcp-server',
@@ -517,7 +534,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:PatrickJS/awesome-cursorrules',
     name: 'awesome-cursorrules',
-    description: 'Curated .cursorrules for Cursor AI — framework-specific, language-specific, stack-specific.',
+    description:
+      'Curated .cursorrules for Cursor AI — framework-specific, language-specific, stack-specific.',
     kind: 'prompt-pack',
     source: 'github',
     sourceUrl: 'https://github.com/PatrickJS/awesome-cursorrules',
@@ -554,7 +572,8 @@ const entries: SkillEntry[] = [
   {
     id: 'gh:openai/codex',
     name: '@openai/codex',
-    description: 'The OpenAI Codex CLI — terminal-native coding agent with tool use and sandbox execution.',
+    description:
+      'The OpenAI Codex CLI — terminal-native coding agent with tool use and sandbox execution.',
     kind: 'cli-tool',
     source: 'npm',
     sourceUrl: 'https://www.npmjs.com/package/@openai/codex',
