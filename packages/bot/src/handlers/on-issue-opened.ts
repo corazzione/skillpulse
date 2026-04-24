@@ -27,6 +27,21 @@ async function appendToJsonArray(path: string, value: string): Promise<void> {
   }
 }
 
+async function appendCompatSignal(path: string, url: string, agent: string): Promise<void> {
+  await mkdir(join(process.cwd(), 'data'), { recursive: true });
+  let signals: Record<string, string[]> = {};
+  try {
+    signals = JSON.parse(await readFile(path, 'utf-8')) as Record<string, string[]>;
+  } catch {
+    // file doesn't exist yet
+  }
+  const existing = signals[url] ?? [];
+  if (!existing.includes(agent)) {
+    signals[url] = [...existing, agent];
+    await writeFile(path, JSON.stringify(signals, null, 2));
+  }
+}
+
 function extractUrlFromBody(body: string): string | null {
   const match = body.match(/https?:\/\/[^\s\)\"\']+/);
   return match?.[0] ?? null;
@@ -73,12 +88,23 @@ export async function onIssueOpened(octokit: Octokit, payload: IssueOpenedPayloa
       try {
         const telemetry = JSON.parse(jsonMatch[1]) as {
           userId: string;
-          skills: Array<{ name: string; kind: string; url?: string; description?: string }>;
+          skills: Array<{
+            name: string;
+            kind: string;
+            url?: string;
+            description?: string;
+            detectedBy?: string;
+          }>;
         };
-        // Add any new URLs to pending-submissions
+        // Add any new URLs to pending-submissions, annotated with compat agent
         for (const skill of telemetry.skills) {
           if (skill.url?.startsWith('http')) {
             await appendToJsonArray(PENDING_PATH, skill.url);
+            // If we have detectedBy info, store it for compat signal enrichment
+            if (skill.detectedBy) {
+              const compatPath = join(process.cwd(), 'data', 'compat-signals.json');
+              await appendCompatSignal(compatPath, skill.url, skill.detectedBy);
+            }
           }
         }
         await octokit.issues.createComment({
