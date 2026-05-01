@@ -13,7 +13,7 @@
     "@octokit/graphql": "^9.0.3",
     "@octokit/rest": "^22.0.1",
     "@skillpulse/core": "workspace:*",
-    "p-queue": "^9.1.2",
+    "p-queue": "^9.2.0",
     "p-retry": "^8.0.0",
     "undici": "^8.1.0"
   },
