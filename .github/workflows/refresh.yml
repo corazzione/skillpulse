@@ -59,7 +59,7 @@ jobs:
         run: pnpm tsx scripts/write-health.ts
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'chore(data): refresh ${{ github.run_id }}'
           commit_user_name: 'github-actions[bot]'
